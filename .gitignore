@@ -1,0 +1,45 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+.env
+.env.*
+!.env.example
+
+data/raw/
+data/processed/
+artifacts/embeddings/
+artifacts/profiles/
+
+# Nested upstream clones. Provenance is pinned by SHA-256 in each run manifest
+# instead of vendoring the checkouts.
+external/
+
+# Heavy per-run outputs. Only manifest/summary style JSON is versioned so the
+# repository stays a provenance record rather than a data store.
+artifacts/results/**/console.log
+artifacts/results/**/supervisor_child.log
+artifacts/results/**/*.jsonl
+artifacts/results/**/usage.json
+artifacts/results/**/*simulator_cache.json
+artifacts/results/**/live_response_cache.json
+artifacts/results/legacy/
+
+# Per-query dumps. Version summary.json / manifest.json only.
+artifacts/results/**/dfsdt/
+artifacts/results/**/draft/
+artifacts/results/**/ours/
+artifacts/results/**/initial/
+artifacts/results/**/raw/
+artifacts/results/**/react/
+artifacts/results/**/progress.txt
+artifacts/results/**/result.json
+artifacts/results/**/phase_summary.json
+artifacts/results/*_supervisor.err
+artifacts/results/*_supervisor.out
+
+# Agent working notes, not a paper artifact.
+reports/
+
+artifacts/results/restbench_spotify_flash/

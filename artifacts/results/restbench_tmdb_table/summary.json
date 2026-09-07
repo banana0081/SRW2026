@@ -1,0 +1,87 @@
+{
+  "manifest": {
+    "created_at": "2026-09-07T04:24:09.472405+00:00",
+    "dataset": "RestBench-TMDB",
+    "n": 100,
+    "start": 0,
+    "model": "inclusionai/ling-3.0-flash",
+    "workers": 1,
+    "retrieval_num": 5,
+    "decoding": {
+      "temperature": 0.2,
+      "top_p": 1,
+      "max_tokens": 2000
+    },
+    "driver": "external/DRAFT/Inference_DFSDT.py verbatim + TMDB HTTP",
+    "rows": {
+      "ReAct": {
+        "agent": "react",
+        "docs": "Initial"
+      },
+      "DFSDT": {
+        "agent": "dfsdt",
+        "docs": "Initial"
+      },
+      "DRAFT": {
+        "agent": "draft",
+        "docs": "DRAFT"
+      }
+    },
+    "easytool": "skipped, RestBench EasyTool docs were not released",
+    "docs": {
+      "Initial": {
+        "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_Initial.json",
+        "digest": "af196035e3f68940026807ed2337231054733d538a7ba9406931df89cbb18f0d"
+      },
+      "DRAFT": {
+        "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_DRAFT.json",
+        "digest": "bbd0d43f5d72492af0613f8934f1f7e5c454fa91c84bfda6040e9c76c6cec417"
+      }
+    },
+    "queries_digest": "1a9b89355d2abbab0be5e3ee2db1344925de6b43d743634621b9da399fabcf11"
+  },
+  "conditions": {
+    "ReAct": {
+      "n": 100,
+      "ok": 100,
+      "errors": 0,
+      "cp": 0.24,
+      "cp_over_n": 0.24,
+      "hits": 24,
+      "http_live": 92,
+      "cost_usd": 0.029002
+    },
+    "DFSDT": {
+      "n": 100,
+      "ok": 99,
+      "errors": 1,
+      "cp": 0.8788,
+      "cp_over_n": 0.87,
+      "hits": 87,
+      "http_live": 125,
+      "cost_usd": 0.067749
+    },
+    "DRAFT": {
+      "n": 100,
+      "ok": 100,
+      "errors": 0,
+      "cp": 0.9,
+      "cp_over_n": 0.9,
+      "hits": 90,
+      "http_live": 45,
+      "cost_usd": 0.082115
+    }
+  },
+  "cost_usd": 0.178862,
+  "retry_cost_usd": 0.0,
+  "cap_usd": 0.15,
+  "cache_entries": 0,
+  "jobs": 1,
+  "records": 300,
+  "retried": [
+    [
+      "DFSDT",
+      64
+    ]
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "n": 54,
+  "base": "Initial",
+  "hops_annotated": 33,
+  "responses_annotated": 30,
+  "catalog_scopes": 19,
+  "catalogs_untouched": 2,
+  "examples_from_probe": 0,
+  "schema_changed": false,
+  "prose_rewritten": false,
+  "hop_style": "fill",
+  "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs",
+  "gold_used": false,
+  "probe": {
+    "ok": 0,
+    "fail": 0,
+    "calls": 0
+  },
+  "seed_ids": {}
+}

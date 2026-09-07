@@ -1,0 +1,64 @@
+{
+  "locked_at": "2026-09-07",
+  "cp_definition": "gold relevant APIs are an ordered subsequence of executed api_name",
+  "cp_denominator": "hits / n; driver error counts as miss",
+  "agent": "external/DRAFT/Inference_DFSDT.py + live HTTP",
+  "decoding": {"temperature": 0.2, "top_p": 1, "max_tokens": 2000, "retrieval_num": 5},
+  "omit": ["ReAct", "EasyTool", "ToolBench", "Win%"],
+  "tmdb_ling": {
+    "dataset": "RestBench-TMDB",
+    "n": 100,
+    "model": "inclusionai/ling-3.0-flash",
+    "main": {
+      "DFSDT": {"docs": "TMDB_Initial", "hits": 87, "cp": 0.87, "errors": 1, "stuck_first": 6, "traces": "artifacts/results/restbench_tmdb_table"},
+      "DRAFT": {"docs": "TMDB_DRAFT", "hits": 90, "cp": 0.9, "errors": 0, "stuck_first": 2, "traces": "artifacts/results/restbench_tmdb_table"},
+      "Ours": {"docs": "Initial + fill contracts", "hits": 93, "cp": 0.93, "errors": 0, "stuck_first": 2, "traces": "artifacts/results/restbench_tmdb_ours_v3"}
+    },
+    "pairwise_ours_vs_draft": {
+      "both": 85, "draft_only": 5, "ours_only": 8, "neither": 2, "discordant": 13, "sign_test_two_sided": 0.5811
+    },
+    "pairwise_ours_vs_dfsdt": {
+      "both": 82, "dfsdt_only": 5, "ours_only": 10, "neither": 2, "skip": 1, "discordant": 15, "sign_test_two_sided": 0.3018
+    },
+    "ours_misses": [10, 59, 62, 87, 88, 91, 98]
+  },
+  "tmdb_flash": {
+    "dataset": "RestBench-TMDB",
+    "n": 100,
+    "model": "deepseek/deepseek-v4-flash-0731",
+    "cost_usd": 1.380523,
+    "traces": "artifacts/results/restbench_tmdb_flash",
+    "main": {
+      "DFSDT": {"hits": 91, "cp": 0.91, "errors": 0, "stuck_first": 3},
+      "DRAFT": {"hits": 88, "cp": 0.88, "errors": 1, "stuck_first": 5, "note": "q93 remaining task_decompose driver error counts as miss"},
+      "Ours": {"hits": 93, "cp": 0.93, "errors": 0, "stuck_first": 1}
+    },
+    "pairwise_ours_vs_draft": {
+      "both": 84, "draft_only": 4, "ours_only": 9, "neither": 3, "discordant": 13, "sign_test_two_sided": 0.2668
+    },
+    "pairwise_ours_vs_dfsdt": {
+      "both": 85, "dfsdt_only": 6, "ours_only": 8, "neither": 1, "discordant": 14, "sign_test_two_sided": 0.7905
+    }
+  },
+  "spotify_ling": {
+    "dataset": "RestBench-Spotify",
+    "n": 57,
+    "model": "inclusionai/ling-3.0-flash",
+    "cost_usd": 0.115043,
+    "traces": "artifacts/results/restbench_spotify_ling",
+    "main": {
+      "DFSDT": {"hits": 36, "cp": 0.6316, "errors": 0, "stuck_first": 0},
+      "DRAFT": {"hits": 36, "cp": 0.6316, "errors": 0, "stuck_first": 1},
+      "Ours": {"hits": 39, "cp": 0.6842, "errors": 0, "stuck_first": 2}
+    },
+    "pairwise_ours_vs_draft": {
+      "both": 31, "draft_only": 5, "ours_only": 8, "neither": 13, "discordant": 13, "sign_test_two_sided": 0.5811
+    }
+  },
+  "ablation_cp_over_n": {
+    "schema_lift": 0.8,
+    "hop_gate_choose_tool": 0.82,
+    "hop_gate_on_draft": 0.82,
+    "fill_guideline": 0.93
+  }
+}

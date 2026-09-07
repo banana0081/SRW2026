@@ -1,0 +1,98 @@
+{
+  "retriever": "Contriever",
+  "model": "facebook/contriever-msmarco",
+  "draft_commit": "324685d1b65622fe4d6ccdc11473f1e0f62af5d0",
+  "runs": [
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.37,
+        "ndcg@10": 0.452176,
+        "recall@1": 0.181667,
+        "recall@10": 0.5625,
+        "mrr": 0.553259
+      },
+      "serialization": "colt",
+      "model": "facebook/contriever-msmarco",
+      "similarity": "dot",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.128176
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.47,
+        "ndcg@10": 0.51257,
+        "recall@1": 0.2275,
+        "recall@10": 0.641667,
+        "mrr": 0.610879
+      },
+      "serialization": "colt",
+      "model": "facebook/contriever-msmarco",
+      "similarity": "dot",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.23157
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.508772,
+        "ndcg@10": 0.565476,
+        "recall@1": 0.255848,
+        "recall@10": 0.685673,
+        "mrr": 0.658186
+      },
+      "serialization": "colt",
+      "model": "facebook/contriever-msmarco",
+      "similarity": "dot",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.122248
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.508772,
+        "ndcg@10": 0.524115,
+        "recall@1": 0.25731,
+        "recall@10": 0.643275,
+        "mrr": 0.623432
+      },
+      "serialization": "colt",
+      "model": "facebook/contriever-msmarco",
+      "similarity": "dot",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.066887
+    }
+  ],
+  "serialization_sensitivity": [
+    {
+      "serialization": "colt",
+      "total_absolute_error": 0.548881
+    }
+  ],
+  "note": "DRAFT does not publish its Contriever checkpoint, serialization, pooling or normalization. The settings here are explicit sensitivity runs; reported-score proximity must not be used to select a protocol."
+}

@@ -1,0 +1,450 @@
+{
+  "retriever": "Contriever",
+  "model": "nthakur/contriever-base-msmarco",
+  "draft_commit": "324685d1b65622fe4d6ccdc11473f1e0f62af5d0",
+  "runs": [
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.42,
+        "ndcg@10": 0.451893,
+        "recall@1": 0.2,
+        "recall@10": 0.581667,
+        "mrr": 0.551007
+      },
+      "serialization": "description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.177893
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.26,
+        "ndcg@10": 0.426898,
+        "recall@1": 0.128333,
+        "recall@10": 0.64,
+        "mrr": 0.456099
+      },
+      "serialization": "description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.064102
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.578947,
+        "ndcg@10": 0.597235,
+        "recall@1": 0.292398,
+        "recall@10": 0.694444,
+        "mrr": 0.71219
+      },
+      "serialization": "description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.224182
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.421053,
+        "ndcg@10": 0.480369,
+        "recall@1": 0.226608,
+        "recall@10": 0.583333,
+        "mrr": 0.570801
+      },
+      "serialization": "description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.064578
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.37,
+        "ndcg@10": 0.448074,
+        "recall@1": 0.183333,
+        "recall@10": 0.581667,
+        "mrr": 0.523031
+      },
+      "serialization": "name_description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.124074
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.27,
+        "ndcg@10": 0.424545,
+        "recall@1": 0.135,
+        "recall@10": 0.616667,
+        "mrr": 0.460203
+      },
+      "serialization": "name_description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.056455
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.701754,
+        "ndcg@10": 0.637632,
+        "recall@1": 0.337719,
+        "recall@10": 0.72076,
+        "mrr": 0.785297
+      },
+      "serialization": "name_description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.387386
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.491228,
+        "ndcg@10": 0.534981,
+        "recall@1": 0.252924,
+        "recall@10": 0.672515,
+        "mrr": 0.617241
+      },
+      "serialization": "name_description",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.060209
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.28,
+        "ndcg@10": 0.369389,
+        "recall@1": 0.138333,
+        "recall@10": 0.478333,
+        "mrr": 0.456776
+      },
+      "serialization": "description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.044611
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.26,
+        "ndcg@10": 0.413991,
+        "recall@1": 0.131667,
+        "recall@10": 0.601667,
+        "mrr": 0.460532
+      },
+      "serialization": "description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.077009
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.491228,
+        "ndcg@10": 0.509765,
+        "recall@1": 0.238304,
+        "recall@10": 0.603801,
+        "mrr": 0.622246
+      },
+      "serialization": "description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.048993
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.385965,
+        "ndcg@10": 0.458688,
+        "recall@1": 0.203216,
+        "recall@10": 0.555556,
+        "mrr": 0.547179
+      },
+      "serialization": "description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.121347
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.27,
+        "ndcg@10": 0.382217,
+        "recall@1": 0.14,
+        "recall@10": 0.508333,
+        "mrr": 0.450242
+      },
+      "serialization": "name_description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.041783
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.3,
+        "ndcg@10": 0.428949,
+        "recall@1": 0.151667,
+        "recall@10": 0.601667,
+        "mrr": 0.48445
+      },
+      "serialization": "name_description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.022051
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.508772,
+        "ndcg@10": 0.534235,
+        "recall@1": 0.252924,
+        "recall@10": 0.647661,
+        "mrr": 0.63668
+      },
+      "serialization": "name_description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.091007
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.508772,
+        "ndcg@10": 0.511687,
+        "recall@1": 0.247076,
+        "recall@10": 0.619883,
+        "mrr": 0.620071
+      },
+      "serialization": "name_description_parameters",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.054459
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.33,
+        "ndcg@10": 0.420082,
+        "recall@1": 0.165,
+        "recall@10": 0.529167,
+        "mrr": 0.511504
+      },
+      "serialization": "json",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.056082
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.35,
+        "ndcg@10": 0.452266,
+        "recall@1": 0.170833,
+        "recall@10": 0.613333,
+        "mrr": 0.51969
+      },
+      "serialization": "json",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.051266
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.561404,
+        "ndcg@10": 0.467061,
+        "recall@1": 0.267544,
+        "recall@10": 0.516082,
+        "mrr": 0.638153
+      },
+      "serialization": "json",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.134343
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.526316,
+        "ndcg@10": 0.486788,
+        "recall@1": 0.248538,
+        "recall@10": 0.549708,
+        "mrr": 0.626061
+      },
+      "serialization": "json",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.057528
+    }
+  ],
+  "settings_by_fit_to_paper": [
+    {
+      "serialization": "name_description_parameters",
+      "total_absolute_error": 0.2093
+    },
+    {
+      "serialization": "description_parameters",
+      "total_absolute_error": 0.29196
+    },
+    {
+      "serialization": "json",
+      "total_absolute_error": 0.299219
+    },
+    {
+      "serialization": "description",
+      "total_absolute_error": 0.530755
+    },
+    {
+      "serialization": "name_description",
+      "total_absolute_error": 0.628124
+    }
+  ],
+  "note": "The checkpoint, pooling, normalization and serialization are not specified by DRAFT. This run uses an explicit SentenceTransformers checkpoint and cosine similarity."
+}

@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tooldoc-nir"
+version = "0.1.0"
+description = "Canonical tool-documentation experiments on ToolBench/StableToolBench"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "huggingface-hub>=0.27",
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyarrow>=17",
+    "pydantic>=2.9",
+    "remotezip>=0.12",
+    "requests>=2.32",
+    "scikit-learn>=1.5",
+    "sentence-transformers>=3.3",
+    "nltk>=3.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+]
+
+[project.scripts]
+tooldoc-data = "tooldoc_nir.data:main"
+tooldoc-benchmark = "tooldoc_nir.benchmark:main"
+tooldoc-llm-eval = "tooldoc_nir.llm_eval:main"
+tooldoc-draft-reproduction = "tooldoc_nir.draft_reproduction:main"
+tooldoc-draft-agent = "tooldoc_nir.draft_agent_reproduction:main"
+tooldoc-selection-decompose = "tooldoc_nir.selection_decompose:main"
+tooldoc-g3-metrics = "tooldoc_nir.g3_metrics:main"
+tooldoc-fixed-trace = "tooldoc_nir.fixed_trace:main"
+tooldoc-draft-rewriter = "tooldoc_nir.draft_rewriter:main"
+tooldoc-ours-docs = "tooldoc_nir.ours_documentation:main"
+tooldoc-temporal-pilot = "tooldoc_nir.temporal_pilot:main"
+tooldoc-restbench-table = "tooldoc_nir.restbench_table:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+

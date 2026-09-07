@@ -1,0 +1,191 @@
+{
+  "tools": 282,
+  "apis": 1006,
+  "provenance": {
+    "snapshot": 1006
+  },
+  "apis_with_response_contract": 192,
+  "schema_identifier_differences": 19,
+  "schema_identifier_examples": [
+    {
+      "tool_id": "27",
+      "api": "Create Application",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Address",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Circle",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Circle",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Polygon",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Polygon",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Random Polyline",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Random Polyline",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Sequential Polyline",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Sequential Polyline",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Upload address CSV file",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Simulation By Layers",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Layers",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Simulation By Address",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Add Layer",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "27",
+      "api": "Test Group",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "apikey"
+      ]
+    },
+    {
+      "tool_id": "53",
+      "api": "Generate",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "text"
+      ]
+    },
+    {
+      "tool_id": "109",
+      "api": "Generate Password",
+      "field": "optional_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "exclude",
+        "excludeSimilarCharacters",
+        "length",
+        "lowercase",
+        "numbers",
+        "strict",
+        "symbols",
+        "uppercase"
+      ]
+    },
+    {
+      "tool_id": "271",
+      "api": "Queue Proxy For Checking",
+      "field": "required_parameters",
+      "released_only": [],
+      "snapshot_only": [
+        "Content-Type"
+      ]
+    }
+  ],
+  "policy": "Parameter and API identifiers are copied verbatim from the documentation the backend serves. Ours adds normalized purpose text, surfaced constraints and an explicit response contract; it reads no G3 query, gold path or outcome.",
+  "output": "artifacts\\documentation\\Ours.json"
+}

@@ -1,0 +1,222 @@
+[
+  {
+    "position": 0,
+    "query_index": 0,
+    "query_id": 455,
+    "question_digest": "ebbf20d10fb51294e1d3261edd93dc5d23f273ee1477dcf7a624acf7f29cca61",
+    "gold_path": [
+      [
+        "vimeo",
+        "searchvideos"
+      ],
+      [
+        "vimeo",
+        "getrelatedpeople"
+      ],
+      [
+        "ytstream_download_youtube_videos",
+        "download_stream"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 1,
+    "query_index": 1,
+    "query_id": 456,
+    "question_digest": "4e293cea6c9397b4063f6f3f3c2e34f12613f5341503be9f1d3de25bca65ecd2",
+    "gold_path": [
+      [
+        "vimeo",
+        "searchvideos"
+      ],
+      [
+        "vimeo",
+        "getrelatedpeople"
+      ],
+      [
+        "ytstream_download_youtube_videos",
+        "download_stream"
+      ]
+    ],
+    "condition_order": [
+      "DRAFT",
+      "Initial"
+    ]
+  },
+  {
+    "position": 2,
+    "query_index": 2,
+    "query_id": 457,
+    "question_digest": "822bd938de6b3665084d3bf6e7f2f10e0b684d0ec3328fcfe7b0500c0f96ba26",
+    "gold_path": [
+      [
+        "vimeo",
+        "searchvideos"
+      ],
+      [
+        "vimeo",
+        "getrelatedpeople"
+      ],
+      [
+        "ytstream_download_youtube_videos",
+        "download_stream"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 3,
+    "query_index": 3,
+    "query_id": 459,
+    "question_digest": "273347aa770a80c44bbabb6deeaf1cb0acb5a58149a1a02b33509e43e939e2d8",
+    "gold_path": [
+      [
+        "vimeo",
+        "searchvideos"
+      ],
+      [
+        "vimeo",
+        "getrelatedpeople"
+      ],
+      [
+        "ytstream_download_youtube_videos",
+        "download_stream"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 4,
+    "query_index": 4,
+    "query_id": 460,
+    "question_digest": "c7593aa534d7b89d37b791471b33987865aebe74d3d737bb0659d2c3c2925e47",
+    "gold_path": [
+      [
+        "vimeo",
+        "searchvideos"
+      ],
+      [
+        "vimeo",
+        "getrelatedpeople"
+      ],
+      [
+        "ytstream_download_youtube_videos",
+        "download_stream"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 5,
+    "query_index": 5,
+    "query_id": 1983,
+    "question_digest": "725128e46f680ea692c08fd53fedb657748780513ee0a857b38cb749a65d6d7b",
+    "gold_path": [
+      [
+        "bitly",
+        "shorten"
+      ],
+      [
+        "url_link_shortener",
+        "create_a_new_link"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 6,
+    "query_index": 6,
+    "query_id": 1984,
+    "question_digest": "938e506cbbe6f0291f65530e38d4556a5d2e34d1e9f2ee872f22a4231444e3ca",
+    "gold_path": [
+      [
+        "url_link_shortener",
+        "get_a_list_of_domains"
+      ],
+      [
+        "bitly",
+        "shorten"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 7,
+    "query_index": 7,
+    "query_id": 1985,
+    "question_digest": "6fb2b5007ce0f7056f2610d65c1062896a88c943cba919d3b5f438383cb7d8f7",
+    "gold_path": [
+      [
+        "bitly",
+        "shorten"
+      ],
+      [
+        "url_link_shortener",
+        "get_a_list_of_domains"
+      ]
+    ],
+    "condition_order": [
+      "DRAFT",
+      "Initial"
+    ]
+  },
+  {
+    "position": 8,
+    "query_index": 8,
+    "query_id": 1986,
+    "question_digest": "3d7834253139a5c268cdadcd904bb2f148c78821bd668b0d3fcf7ea99d5dc26b",
+    "gold_path": [
+      [
+        "bitly",
+        "shorten"
+      ],
+      [
+        "url_link_shortener",
+        "create_a_new_link"
+      ]
+    ],
+    "condition_order": [
+      "Initial",
+      "DRAFT"
+    ]
+  },
+  {
+    "position": 9,
+    "query_index": 9,
+    "query_id": 1989,
+    "question_digest": "846bcaee077ff530a3f0cb9a465af381b74f9cad90c3a49eace7c4d68b348187",
+    "gold_path": [
+      [
+        "url_link_shortener",
+        "get_a_list_of_domains"
+      ],
+      [
+        "bitly",
+        "shorten"
+      ]
+    ],
+    "condition_order": [
+      "DRAFT",
+      "Initial"
+    ]
+  }
+]

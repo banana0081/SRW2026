@@ -1,0 +1,98 @@
+{
+  "retriever": "Contriever",
+  "model": "nthakur/contriever-base-msmarco",
+  "draft_commit": "324685d1b65622fe4d6ccdc11473f1e0f62af5d0",
+  "runs": [
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.3,
+        "ndcg@10": 0.402179,
+        "recall@1": 0.151667,
+        "recall@10": 0.516667,
+        "mrr": 0.49402
+      },
+      "serialization": "colt",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.404
+      },
+      "absolute_error": 0.011821
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "metrics": {
+        "ndcg@1": 0.32,
+        "ndcg@10": 0.443258,
+        "recall@1": 0.159167,
+        "recall@10": 0.585,
+        "mrr": 0.521886
+      },
+      "serialization": "colt",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.31,
+        "ndcg@10": 0.441
+      },
+      "absolute_error": 0.012258
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.45614,
+        "ndcg@10": 0.495424,
+        "recall@1": 0.232456,
+        "recall@10": 0.595029,
+        "mrr": 0.5956
+      },
+      "serialization": "colt",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.456,
+        "ndcg@10": 0.496
+      },
+      "absolute_error": 0.000716
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "metrics": {
+        "ndcg@1": 0.473684,
+        "ndcg@10": 0.490256,
+        "recall@1": 0.23538,
+        "recall@10": 0.577485,
+        "mrr": 0.603947
+      },
+      "serialization": "colt",
+      "model": "nthakur/contriever-base-msmarco",
+      "similarity": "cosine",
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.474,
+        "ndcg@10": 0.492
+      },
+      "absolute_error": 0.00206
+    }
+  ],
+  "serialization_sensitivity": [
+    {
+      "serialization": "colt",
+      "total_absolute_error": 0.026855
+    }
+  ],
+  "note": "DRAFT does not publish its Contriever checkpoint, serialization, pooling or normalization. The settings here are explicit sensitivity runs; reported-score proximity must not be used to select a protocol."
+}

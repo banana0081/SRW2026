@@ -1,0 +1,264 @@
+{
+  "retriever": "BM25Okapi",
+  "draft_commit": "324685d1b65622fe4d6ccdc11473f1e0f62af5d0",
+  "runs": [
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "words",
+      "metrics": {
+        "ndcg@1": 0.23,
+        "ndcg@10": 0.275515,
+        "recall@1": 0.11,
+        "recall@10": 0.3675,
+        "mrr": 0.361396
+      },
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.24,
+        "ndcg@10": 0.35
+      },
+      "absolute_error": 0.084485
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "words",
+      "metrics": {
+        "ndcg@1": 0.28,
+        "ndcg@10": 0.393732,
+        "recall@1": 0.138333,
+        "recall@10": 0.521667,
+        "mrr": 0.462626
+      },
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.394
+      },
+      "absolute_error": 0.010268
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "words",
+      "metrics": {
+        "ndcg@1": 0.578947,
+        "ndcg@10": 0.592287,
+        "recall@1": 0.26462,
+        "recall@10": 0.703216,
+        "mrr": 0.708795
+      },
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.539
+      },
+      "absolute_error": 0.193234
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "words",
+      "metrics": {
+        "ndcg@1": 0.614035,
+        "ndcg@10": 0.61446,
+        "recall@1": 0.28655,
+        "recall@10": 0.730994,
+        "mrr": 0.72192
+      },
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.542
+      },
+      "absolute_error": 0.247495
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "sklearn",
+      "metrics": {
+        "ndcg@1": 0.22,
+        "ndcg@10": 0.276798,
+        "recall@1": 0.105,
+        "recall@10": 0.365833,
+        "mrr": 0.362346
+      },
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.24,
+        "ndcg@10": 0.35
+      },
+      "absolute_error": 0.093202
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "sklearn",
+      "metrics": {
+        "ndcg@1": 0.3,
+        "ndcg@10": 0.402856,
+        "recall@1": 0.155,
+        "recall@10": 0.525,
+        "mrr": 0.476227
+      },
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.394
+      },
+      "absolute_error": 0.018856
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "sklearn",
+      "metrics": {
+        "ndcg@1": 0.578947,
+        "ndcg@10": 0.591394,
+        "recall@1": 0.26462,
+        "recall@10": 0.694444,
+        "mrr": 0.713181
+      },
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.539
+      },
+      "absolute_error": 0.192341
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "sklearn",
+      "metrics": {
+        "ndcg@1": 0.614035,
+        "ndcg@10": 0.614637,
+        "recall@1": 0.28655,
+        "recall@10": 0.730994,
+        "mrr": 0.721054
+      },
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.542
+      },
+      "absolute_error": 0.247672
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "whitespace",
+      "metrics": {
+        "ndcg@1": 0.17,
+        "ndcg@10": 0.2353,
+        "recall@1": 0.085,
+        "recall@10": 0.331667,
+        "mrr": 0.302602
+      },
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.24,
+        "ndcg@10": 0.35
+      },
+      "absolute_error": 0.1847
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "tokenizer": "whitespace",
+      "metrics": {
+        "ndcg@1": 0.24,
+        "ndcg@10": 0.346305,
+        "recall@1": 0.1225,
+        "recall@10": 0.4775,
+        "mrr": 0.411416
+      },
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.394
+      },
+      "absolute_error": 0.097695
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "whitespace",
+      "metrics": {
+        "ndcg@1": 0.421053,
+        "ndcg@10": 0.479489,
+        "recall@1": 0.22076,
+        "recall@10": 0.557018,
+        "mrr": 0.582736
+      },
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.539
+      },
+      "absolute_error": 0.077458
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "tokenizer": "whitespace",
+      "metrics": {
+        "ndcg@1": 0.614035,
+        "ndcg@10": 0.58782,
+        "recall@1": 0.28655,
+        "recall@10": 0.647661,
+        "mrr": 0.731808
+      },
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.542
+      },
+      "absolute_error": 0.220855
+    }
+  ],
+  "serialization_tokenizer_sensitivity": [
+    {
+      "serialization": "colt",
+      "tokenizer": "sklearn",
+      "total_absolute_error": 0.552071
+    },
+    {
+      "serialization": "colt",
+      "tokenizer": "whitespace",
+      "total_absolute_error": 0.580708
+    },
+    {
+      "serialization": "colt",
+      "tokenizer": "words",
+      "total_absolute_error": 0.535482
+    }
+  ],
+  "note": "DRAFT does not publish its retrieval implementation or document serialization. This matrix reports standard BM25 variants without using the expected scores to alter rankings."
+}

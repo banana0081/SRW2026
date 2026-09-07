@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "detail": "9/10 queries scored, 1 excluded, spent $0.063782 of $0.15",
+  "attempts": 1,
+  "runner_exit_code": 0,
+  "decided_at": "2026-09-04T21:16:21",
+  "snapshot": {
+    "run_root": "artifacts\\results\\g3_smoke_v2",
+    "conditions": {
+      "initial": {
+        "done": 10,
+        "planned": 10
+      },
+      "draft": {
+        "done": 9,
+        "planned": 10
+      }
+    },
+    "total_done": 19,
+    "total_planned": 20,
+    "agent_requests": 470,
+    "simulator_requests": 22,
+    "total_cost_usd": 0.063782,
+    "summary_exists": true,
+    "verdict_exists": false
+  }
+}

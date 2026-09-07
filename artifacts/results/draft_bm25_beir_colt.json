@@ -1,0 +1,105 @@
+{
+  "retriever": "Elasticsearch BM25",
+  "draft_commit": "324685d1b65622fe4d6ccdc11473f1e0f62af5d0",
+  "runs": [
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "engine": "Elasticsearch BM25",
+      "elasticsearch_version_target": "7.17.9",
+      "analyzer": "english",
+      "search_type": "dfs_query_then_fetch",
+      "metrics": {
+        "ndcg@1": 0.3,
+        "ndcg@10": 0.401916,
+        "recall@1": 0.143333,
+        "recall@10": 0.5425,
+        "mrr": 0.449956
+      },
+      "dataset": "TMDB",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.24,
+        "ndcg@10": 0.35
+      },
+      "absolute_error": 0.111916
+    },
+    {
+      "queries": 100,
+      "documents": 54,
+      "serialization": "colt",
+      "engine": "Elasticsearch BM25",
+      "elasticsearch_version_target": "7.17.9",
+      "analyzer": "english",
+      "search_type": "dfs_query_then_fetch",
+      "metrics": {
+        "ndcg@1": 0.35,
+        "ndcg@10": 0.462443,
+        "recall@1": 0.18,
+        "recall@10": 0.6125,
+        "mrr": 0.518147
+      },
+      "dataset": "TMDB",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.29,
+        "ndcg@10": 0.394
+      },
+      "absolute_error": 0.128443
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "engine": "Elasticsearch BM25",
+      "elasticsearch_version_target": "7.17.9",
+      "analyzer": "english",
+      "search_type": "dfs_query_then_fetch",
+      "metrics": {
+        "ndcg@1": 0.596491,
+        "ndcg@10": 0.627388,
+        "recall@1": 0.27193,
+        "recall@10": 0.78655,
+        "mrr": 0.720927
+      },
+      "dataset": "Spotify",
+      "condition": "Initial",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.539
+      },
+      "absolute_error": 0.245879
+    },
+    {
+      "queries": 57,
+      "documents": 40,
+      "serialization": "colt",
+      "engine": "Elasticsearch BM25",
+      "elasticsearch_version_target": "7.17.9",
+      "analyzer": "english",
+      "search_type": "dfs_query_then_fetch",
+      "metrics": {
+        "ndcg@1": 0.526316,
+        "ndcg@10": 0.569958,
+        "recall@1": 0.251462,
+        "recall@10": 0.725146,
+        "mrr": 0.643365
+      },
+      "dataset": "Spotify",
+      "condition": "DRAFT",
+      "expected": {
+        "ndcg@1": 0.439,
+        "ndcg@10": 0.542
+      },
+      "absolute_error": 0.115274
+    }
+  ],
+  "serialization_sensitivity": [
+    {
+      "serialization": "colt",
+      "total_absolute_error": 0.601512
+    }
+  ],
+  "note": "This follows the author-adjacent COLT/BEIR stack: Elasticsearch English analyzer, default BM25 k1=1.2/b=0.75, one shard and dfs_query_then_fetch. DRAFT itself does not publish Table 3 code."
+}

@@ -1,0 +1,26 @@
+{
+  "run_root": "artifacts\\results\\g3_smoke_v2",
+  "passed": true,
+  "problems": [],
+  "notes": [
+    "1 query/queries excluded pairwise: [2]",
+    "DRAFT resampled 5 completion(s) that violated the shape the released prompt requires"
+  ],
+  "planned_queries": 10,
+  "scored_queries": 9,
+  "excluded_positions": [
+    2
+  ],
+  "correct_path": {
+    "Initial": 0.6667,
+    "DRAFT": 0.8889
+  },
+  "correct_path_released": {
+    "Initial": 0.6667,
+    "DRAFT": 0.8889
+  },
+  "cost_usd": 0.063782,
+  "agent_model": "openai/gpt-4o-mini-2024-07-18",
+  "seed": 0,
+  "revision": "6a6b0b9830fcd632752e10ab21c04d6320aa7ad9"
+}

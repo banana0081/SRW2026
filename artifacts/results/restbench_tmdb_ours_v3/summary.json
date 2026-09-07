@@ -1,0 +1,58 @@
+{
+  "manifest": {
+    "created_at": "2026-09-07T05:27:39.713336+00:00",
+    "dataset": "RestBench-TMDB",
+    "n": 100,
+    "start": 0,
+    "model": "inclusionai/ling-3.0-flash",
+    "workers": 12,
+    "retrieval_num": 5,
+    "decoding": {
+      "temperature": 0.2,
+      "top_p": 1,
+      "max_tokens": 2000
+    },
+    "driver": "external/DRAFT/Inference_DFSDT.py verbatim + TMDB HTTP",
+    "rows": {
+      "Ours": {
+        "agent": "dfsdt",
+        "docs": "Ours"
+      }
+    },
+    "easytool": "skipped, RestBench EasyTool docs were not released",
+    "docs": {
+      "Initial": {
+        "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_Initial.json",
+        "digest": "af196035e3f68940026807ed2337231054733d538a7ba9406931df89cbb18f0d"
+      },
+      "DRAFT": {
+        "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_DRAFT.json",
+        "digest": "bbd0d43f5d72492af0613f8934f1f7e5c454fa91c84bfda6040e9c76c6cec417"
+      },
+      "Ours": {
+        "path": "artifacts\\documentation\\TMDB_Ours.json",
+        "digest": "3fb8a72d8bc689354e0bef5c17c650a974b65595492c764474857815b3ee60c0"
+      }
+    },
+    "queries_digest": "1a9b89355d2abbab0be5e3ee2db1344925de6b43d743634621b9da399fabcf11"
+  },
+  "conditions": {
+    "Ours": {
+      "n": 100,
+      "ok": 100,
+      "errors": 0,
+      "cp": 0.93,
+      "cp_over_n": 0.93,
+      "hits": 93,
+      "http_live": 173,
+      "cost_usd": 0.059769
+    }
+  },
+  "cost_usd": 0.05977,
+  "retry_cost_usd": 0.0,
+  "cap_usd": 1.0,
+  "cache_entries": 179,
+  "jobs": 100,
+  "records": 100,
+  "retried": []
+}
