@@ -1,0 +1,1692 @@
+{
+  "models": {
+    "ling": "inclusionai/ling-3.0-flash",
+    "flash": "deepseek/deepseek-v4-flash-0731"
+  },
+  "error_policy": "a driver failure or malformed completion counts as a miss; a query whose transport never recovered is dropped from every arm",
+  "primary_criterion": "seed-level paired Student-t 95% intervals above zero for all four contrasts (2 models x Ours-DRAFT / Ours-Initial), one frozen documentation payload on one pinned provider",
+  "secondary_criterion": "execution-valid CP: the gold path was executed with no call rejected because the agent filled a parameter wrongly",
+  "preregistered_ours_digests": {
+    "P": "cff6500108cc",
+    "PF": "4c156438e462"
+  },
+  "protocol": "artifacts\\documentation\\TMDB_positive_scope_protocol.json",
+  "canonical": {
+    "ling": {
+      "frozen_ours_digest": "ad3dc7602578",
+      "digest_source": "majority of seed roots, no protocol frozen yet",
+      "providers": [
+        "unpinned"
+      ],
+      "seeds_included": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seeds_excluded_by_digest": {},
+      "errors_per_seed": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 1,
+        "8": 0,
+        "9": 0
+      },
+      "max_errors_per_seed": 1,
+      "seed_level_cp": {
+        "DFSDT": {
+          "seeds": 9,
+          "mean": 0.8989,
+          "sd": 0.0362,
+          "se": 0.0121,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.8711,
+            0.9267
+          ],
+          "positive": true,
+          "values": [
+            0.83,
+            0.88,
+            0.93,
+            0.91,
+            0.87,
+            0.94,
+            0.89,
+            0.9,
+            0.94
+          ]
+        },
+        "DRAFT": {
+          "seeds": 9,
+          "mean": 0.8556,
+          "sd": 0.0235,
+          "se": 0.0078,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.8375,
+            0.8736
+          ],
+          "positive": true,
+          "values": [
+            0.86,
+            0.85,
+            0.87,
+            0.88,
+            0.83,
+            0.87,
+            0.85,
+            0.88,
+            0.81
+          ]
+        },
+        "Ours": {
+          "seeds": 9,
+          "mean": 0.9244,
+          "sd": 0.0207,
+          "se": 0.0069,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.9085,
+            0.9403
+          ],
+          "positive": true,
+          "values": [
+            0.96,
+            0.93,
+            0.94,
+            0.9,
+            0.93,
+            0.91,
+            0.91,
+            0.94,
+            0.9
+          ]
+        }
+      },
+      "seed_level_execution_valid_cp": {
+        "DFSDT": {
+          "seeds": 9,
+          "mean": 0.51,
+          "sd": 0.05,
+          "se": 0.0167,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.4716,
+            0.5484
+          ],
+          "positive": true,
+          "values": [
+            0.5,
+            0.47,
+            0.5,
+            0.55,
+            0.53,
+            0.57,
+            0.41,
+            0.5,
+            0.56
+          ]
+        },
+        "DRAFT": {
+          "seeds": 9,
+          "mean": 0.1533,
+          "sd": 0.0346,
+          "se": 0.0115,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.1267,
+            0.18
+          ],
+          "positive": true,
+          "values": [
+            0.14,
+            0.1,
+            0.17,
+            0.21,
+            0.18,
+            0.16,
+            0.11,
+            0.14,
+            0.17
+          ]
+        },
+        "Ours": {
+          "seeds": 9,
+          "mean": 0.57,
+          "sd": 0.0409,
+          "se": 0.0136,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.5385,
+            0.6015
+          ],
+          "positive": true,
+          "values": [
+            0.58,
+            0.65,
+            0.62,
+            0.54,
+            0.54,
+            0.54,
+            0.56,
+            0.53,
+            0.57
+          ]
+        }
+      },
+      "paired_ours_minus_baseline": {
+        "DRAFT": {
+          "seeds": 9,
+          "mean": 0.0689,
+          "sd": 0.0271,
+          "se": 0.009,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.048,
+            0.0897
+          ],
+          "positive": true,
+          "values": [
+            0.1,
+            0.08,
+            0.07,
+            0.02,
+            0.1,
+            0.04,
+            0.06,
+            0.06,
+            0.09
+          ]
+        },
+        "Initial": {
+          "seeds": 9,
+          "mean": 0.0256,
+          "sd": 0.0522,
+          "se": 0.0174,
+          "t_quantile": 2.306,
+          "ci95": [
+            -0.0146,
+            0.0657
+          ],
+          "positive": false,
+          "values": [
+            0.13,
+            0.05,
+            0.01,
+            -0.01,
+            0.06,
+            -0.03,
+            0.02,
+            0.04,
+            -0.04
+          ]
+        }
+      },
+      "paired_ours_minus_draft": {
+        "seeds": 9,
+        "mean": 0.0689,
+        "sd": 0.0271,
+        "se": 0.009,
+        "t_quantile": 2.306,
+        "ci95": [
+          0.048,
+          0.0897
+        ],
+        "positive": true,
+        "values": [
+          0.1,
+          0.08,
+          0.07,
+          0.02,
+          0.1,
+          0.04,
+          0.06,
+          0.06,
+          0.09
+        ]
+      },
+      "query_level_cp_pooled": {
+        "DFSDT": {
+          "p": 0.8989,
+          "low": 0.8775,
+          "high": 0.9169,
+          "n": 900,
+          "hits": 809
+        },
+        "DRAFT": {
+          "p": 0.8556,
+          "low": 0.8311,
+          "high": 0.877,
+          "n": 900,
+          "hits": 770
+        },
+        "Ours": {
+          "p": 0.9244,
+          "low": 0.9053,
+          "high": 0.94,
+          "n": 900,
+          "hits": 832
+        }
+      },
+      "mechanics": {
+        "DFSDT": {
+          "n": 900,
+          "flags": {
+            "driver_error": 0,
+            "no_call": 0,
+            "first_producer_present": 899,
+            "intermediate_producer_present": 871,
+            "final_consumer_present": 856,
+            "repeat_producer": 341,
+            "wrong_first": 15,
+            "wrong_order": 19,
+            "parameter_or_http_error": 379,
+            "correct_path": 809
+          },
+          "misses": 91,
+          "missing_first_producer": 1,
+          "missing_intermediate_producer": 29,
+          "missing_final_consumer": 42,
+          "other_miss": 19
+        },
+        "DRAFT": {
+          "n": 900,
+          "flags": {
+            "driver_error": 1,
+            "no_call": 1,
+            "first_producer_present": 896,
+            "intermediate_producer_present": 862,
+            "final_consumer_present": 825,
+            "repeat_producer": 437,
+            "wrong_first": 20,
+            "wrong_order": 24,
+            "parameter_or_http_error": 675,
+            "correct_path": 770
+          },
+          "misses": 130,
+          "missing_first_producer": 4,
+          "missing_intermediate_producer": 38,
+          "missing_final_consumer": 64,
+          "other_miss": 24
+        },
+        "Ours": {
+          "n": 900,
+          "flags": {
+            "driver_error": 2,
+            "no_call": 2,
+            "first_producer_present": 896,
+            "intermediate_producer_present": 885,
+            "final_consumer_present": 860,
+            "repeat_producer": 334,
+            "wrong_first": 13,
+            "wrong_order": 12,
+            "parameter_or_http_error": 336,
+            "correct_path": 832
+          },
+          "misses": 68,
+          "missing_first_producer": 4,
+          "missing_intermediate_producer": 15,
+          "missing_final_consumer": 37,
+          "other_miss": 12
+        }
+      }
+    },
+    "flash": {
+      "frozen_ours_digest": "ad3dc7602578",
+      "digest_source": "majority of seed roots, no protocol frozen yet",
+      "providers": [
+        "unpinned"
+      ],
+      "seeds_included": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "seeds_excluded_by_digest": {},
+      "errors_per_seed": {
+        "1": 5,
+        "2": 2,
+        "3": 4,
+        "4": 1,
+        "5": 3,
+        "6": 2,
+        "7": 0,
+        "8": 0,
+        "9": 1
+      },
+      "max_errors_per_seed": 5,
+      "seed_level_cp": {
+        "DFSDT": {
+          "seeds": 9,
+          "mean": 0.9156,
+          "sd": 0.0207,
+          "se": 0.0069,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.8997,
+            0.9315
+          ],
+          "positive": true,
+          "values": [
+            0.89,
+            0.89,
+            0.92,
+            0.94,
+            0.89,
+            0.92,
+            0.92,
+            0.94,
+            0.93
+          ]
+        },
+        "DRAFT": {
+          "seeds": 9,
+          "mean": 0.8922,
+          "sd": 0.0273,
+          "se": 0.0091,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.8712,
+            0.9132
+          ],
+          "positive": true,
+          "values": [
+            0.91,
+            0.89,
+            0.88,
+            0.87,
+            0.84,
+            0.93,
+            0.9,
+            0.89,
+            0.92
+          ]
+        },
+        "Ours": {
+          "seeds": 9,
+          "mean": 0.8767,
+          "sd": 0.0339,
+          "se": 0.0113,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.8506,
+            0.9027
+          ],
+          "positive": true,
+          "values": [
+            0.87,
+            0.89,
+            0.89,
+            0.83,
+            0.86,
+            0.86,
+            0.84,
+            0.93,
+            0.92
+          ]
+        }
+      },
+      "seed_level_execution_valid_cp": {
+        "DFSDT": {
+          "seeds": 9,
+          "mean": 0.6311,
+          "sd": 0.0395,
+          "se": 0.0132,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.6007,
+            0.6615
+          ],
+          "positive": true,
+          "values": [
+            0.63,
+            0.55,
+            0.63,
+            0.66,
+            0.67,
+            0.59,
+            0.67,
+            0.65,
+            0.63
+          ]
+        },
+        "DRAFT": {
+          "seeds": 9,
+          "mean": 0.2378,
+          "sd": 0.0299,
+          "se": 0.01,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.2148,
+            0.2608
+          ],
+          "positive": true,
+          "values": [
+            0.24,
+            0.23,
+            0.22,
+            0.2,
+            0.29,
+            0.24,
+            0.27,
+            0.25,
+            0.2
+          ]
+        },
+        "Ours": {
+          "seeds": 9,
+          "mean": 0.6222,
+          "sd": 0.0572,
+          "se": 0.0191,
+          "t_quantile": 2.306,
+          "ci95": [
+            0.5783,
+            0.6662
+          ],
+          "positive": true,
+          "values": [
+            0.53,
+            0.64,
+            0.67,
+            0.58,
+            0.59,
+            0.61,
+            0.59,
+            0.68,
+            0.71
+          ]
+        }
+      },
+      "paired_ours_minus_baseline": {
+        "DRAFT": {
+          "seeds": 9,
+          "mean": -0.0156,
+          "sd": 0.0381,
+          "se": 0.0127,
+          "t_quantile": 2.306,
+          "ci95": [
+            -0.0449,
+            0.0137
+          ],
+          "positive": false,
+          "values": [
+            -0.04,
+            0.0,
+            0.01,
+            -0.04,
+            0.02,
+            -0.07,
+            -0.06,
+            0.04,
+            0.0
+          ]
+        },
+        "Initial": {
+          "seeds": 9,
+          "mean": -0.0389,
+          "sd": 0.0369,
+          "se": 0.0123,
+          "t_quantile": 2.306,
+          "ci95": [
+            -0.0672,
+            -0.0105
+          ],
+          "positive": false,
+          "values": [
+            -0.02,
+            0.0,
+            -0.03,
+            -0.11,
+            -0.03,
+            -0.06,
+            -0.08,
+            -0.01,
+            -0.01
+          ]
+        }
+      },
+      "paired_ours_minus_draft": {
+        "seeds": 9,
+        "mean": -0.0156,
+        "sd": 0.0381,
+        "se": 0.0127,
+        "t_quantile": 2.306,
+        "ci95": [
+          -0.0449,
+          0.0137
+        ],
+        "positive": false,
+        "values": [
+          -0.04,
+          0.0,
+          0.01,
+          -0.04,
+          0.02,
+          -0.07,
+          -0.06,
+          0.04,
+          0.0
+        ]
+      },
+      "query_level_cp_pooled": {
+        "DFSDT": {
+          "p": 0.9156,
+          "low": 0.8956,
+          "high": 0.932,
+          "n": 900,
+          "hits": 824
+        },
+        "DRAFT": {
+          "p": 0.8922,
+          "low": 0.8703,
+          "high": 0.9108,
+          "n": 900,
+          "hits": 803
+        },
+        "Ours": {
+          "p": 0.8767,
+          "low": 0.8536,
+          "high": 0.8966,
+          "n": 900,
+          "hits": 789
+        }
+      },
+      "mechanics": {
+        "DFSDT": {
+          "n": 900,
+          "flags": {
+            "driver_error": 3,
+            "no_call": 4,
+            "first_producer_present": 875,
+            "intermediate_producer_present": 894,
+            "final_consumer_present": 864,
+            "repeat_producer": 212,
+            "wrong_first": 29,
+            "wrong_order": 15,
+            "parameter_or_http_error": 283,
+            "correct_path": 824
+          },
+          "misses": 76,
+          "missing_first_producer": 25,
+          "missing_intermediate_producer": 6,
+          "missing_final_consumer": 30,
+          "other_miss": 15
+        },
+        "DRAFT": {
+          "n": 900,
+          "flags": {
+            "driver_error": 8,
+            "no_call": 10,
+            "first_producer_present": 872,
+            "intermediate_producer_present": 885,
+            "final_consumer_present": 845,
+            "repeat_producer": 262,
+            "wrong_first": 27,
+            "wrong_order": 16,
+            "parameter_or_http_error": 635,
+            "correct_path": 803
+          },
+          "misses": 97,
+          "missing_first_producer": 28,
+          "missing_intermediate_producer": 11,
+          "missing_final_consumer": 42,
+          "other_miss": 16
+        },
+        "Ours": {
+          "n": 900,
+          "flags": {
+            "driver_error": 7,
+            "no_call": 10,
+            "first_producer_present": 865,
+            "intermediate_producer_present": 889,
+            "final_consumer_present": 836,
+            "repeat_producer": 176,
+            "wrong_first": 35,
+            "wrong_order": 18,
+            "parameter_or_http_error": 261,
+            "correct_path": 789
+          },
+          "misses": 111,
+          "missing_first_producer": 35,
+          "missing_intermediate_producer": 9,
+          "missing_final_consumer": 49,
+          "other_miss": 18
+        }
+      }
+    }
+  },
+  "contemporaneous": {
+    "ling": {
+      "frozen_ours_digest": "contemporane",
+      "digest_source": "majority of seed roots, no protocol frozen yet",
+      "providers": [
+        "unpinned"
+      ],
+      "seeds_included": [
+        0,
+        4,
+        7
+      ],
+      "seeds_excluded_by_digest": {},
+      "errors_per_seed": {
+        "0": 0,
+        "4": 0,
+        "7": 1
+      },
+      "max_errors_per_seed": 1,
+      "seed_level_cp": {
+        "DFSDT": {
+          "seeds": 3,
+          "mean": 0.9267,
+          "sd": 0.0115,
+          "se": 0.0067,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.898,
+            0.9554
+          ],
+          "positive": true,
+          "values": [
+            0.94,
+            0.92,
+            0.92
+          ]
+        },
+        "DRAFT": {
+          "seeds": 3,
+          "mean": 0.89,
+          "sd": 0.0265,
+          "se": 0.0153,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.8243,
+            0.9557
+          ],
+          "positive": true,
+          "values": [
+            0.88,
+            0.92,
+            0.87
+          ]
+        },
+        "Ours": {
+          "seeds": 3,
+          "mean": 0.9133,
+          "sd": 0.0058,
+          "se": 0.0033,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.899,
+            0.9277
+          ],
+          "positive": true,
+          "values": [
+            0.92,
+            0.91,
+            0.91
+          ]
+        }
+      },
+      "seed_level_execution_valid_cp": {
+        "DFSDT": {
+          "seeds": 3,
+          "mean": 0.5167,
+          "sd": 0.0306,
+          "se": 0.0176,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.4408,
+            0.5926
+          ],
+          "positive": true,
+          "values": [
+            0.55,
+            0.49,
+            0.51
+          ]
+        },
+        "DRAFT": {
+          "seeds": 3,
+          "mean": 0.19,
+          "sd": 0.0265,
+          "se": 0.0153,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.1243,
+            0.2557
+          ],
+          "positive": true,
+          "values": [
+            0.16,
+            0.2,
+            0.21
+          ]
+        },
+        "Ours": {
+          "seeds": 3,
+          "mean": 0.56,
+          "sd": 0.02,
+          "se": 0.0115,
+          "t_quantile": 4.3027,
+          "ci95": [
+            0.5103,
+            0.6097
+          ],
+          "positive": true,
+          "values": [
+            0.58,
+            0.56,
+            0.54
+          ]
+        }
+      },
+      "paired_ours_minus_baseline": {
+        "DRAFT": {
+          "seeds": 3,
+          "mean": 0.0233,
+          "sd": 0.0289,
+          "se": 0.0167,
+          "t_quantile": 4.3027,
+          "ci95": [
+            -0.0484,
+            0.095
+          ],
+          "positive": false,
+          "values": [
+            0.04,
+            -0.01,
+            0.04
+          ]
+        },
+        "Initial": {
+          "seeds": 3,
+          "mean": -0.0133,
+          "sd": 0.0058,
+          "se": 0.0033,
+          "t_quantile": 4.3027,
+          "ci95": [
+            -0.0277,
+            0.001
+          ],
+          "positive": false,
+          "values": [
+            -0.02,
+            -0.01,
+            -0.01
+          ]
+        }
+      },
+      "paired_ours_minus_draft": {
+        "seeds": 3,
+        "mean": 0.0233,
+        "sd": 0.0289,
+        "se": 0.0167,
+        "t_quantile": 4.3027,
+        "ci95": [
+          -0.0484,
+          0.095
+        ],
+        "positive": false,
+        "values": [
+          0.04,
+          -0.01,
+          0.04
+        ]
+      },
+      "query_level_cp_pooled": {
+        "DFSDT": {
+          "p": 0.9267,
+          "low": 0.8915,
+          "high": 0.9511,
+          "n": 300,
+          "hits": 278
+        },
+        "DRAFT": {
+          "p": 0.89,
+          "low": 0.8495,
+          "high": 0.9206,
+          "n": 300,
+          "hits": 267
+        },
+        "Ours": {
+          "p": 0.9133,
+          "low": 0.876,
+          "high": 0.9402,
+          "n": 300,
+          "hits": 274
+        }
+      },
+      "mechanics": {
+        "DFSDT": {
+          "n": 300,
+          "flags": {
+            "driver_error": 0,
+            "no_call": 0,
+            "first_producer_present": 300,
+            "intermediate_producer_present": 294,
+            "final_consumer_present": 288,
+            "repeat_producer": 107,
+            "wrong_first": 6,
+            "wrong_order": 5,
+            "parameter_or_http_error": 128,
+            "correct_path": 278
+          },
+          "misses": 22,
+          "missing_first_producer": 0,
+          "missing_intermediate_producer": 6,
+          "missing_final_consumer": 11,
+          "other_miss": 5
+        },
+        "DRAFT": {
+          "n": 300,
+          "flags": {
+            "driver_error": 1,
+            "no_call": 1,
+            "first_producer_present": 299,
+            "intermediate_producer_present": 286,
+            "final_consumer_present": 284,
+            "repeat_producer": 126,
+            "wrong_first": 6,
+            "wrong_order": 6,
+            "parameter_or_http_error": 226,
+            "correct_path": 267
+          },
+          "misses": 33,
+          "missing_first_producer": 1,
+          "missing_intermediate_producer": 14,
+          "missing_final_consumer": 12,
+          "other_miss": 6
+        },
+        "Ours": {
+          "n": 300,
+          "flags": {
+            "driver_error": 0,
+            "no_call": 0,
+            "first_producer_present": 300,
+            "intermediate_producer_present": 293,
+            "final_consumer_present": 287,
+            "repeat_producer": 112,
+            "wrong_first": 5,
+            "wrong_order": 6,
+            "parameter_or_http_error": 111,
+            "correct_path": 274
+          },
+          "misses": 26,
+          "missing_first_producer": 0,
+          "missing_intermediate_producer": 7,
+          "missing_final_consumer": 13,
+          "other_miss": 6
+        }
+      }
+    },
+    "flash": {
+      "frozen_ours_digest": "contemporane",
+      "digest_source": "majority of seed roots, no protocol frozen yet",
+      "providers": [
+        "unpinned"
+      ],
+      "seeds_included": [
+        4,
+        7
+      ],
+      "seeds_excluded_by_digest": {},
+      "errors_per_seed": {
+        "4": 7,
+        "7": 5
+      },
+      "max_errors_per_seed": 7,
+      "seed_level_cp": {
+        "DFSDT": {
+          "seeds": 2,
+          "mean": 0.895,
+          "sd": 0.0071,
+          "se": 0.005,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.8315,
+            0.9585
+          ],
+          "positive": true,
+          "values": [
+            0.89,
+            0.9
+          ]
+        },
+        "DRAFT": {
+          "seeds": 2,
+          "mean": 0.875,
+          "sd": 0.0354,
+          "se": 0.025,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.5573,
+            1.1927
+          ],
+          "positive": true,
+          "values": [
+            0.85,
+            0.9
+          ]
+        },
+        "Ours": {
+          "seeds": 2,
+          "mean": 0.91,
+          "sd": 0.0141,
+          "se": 0.01,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.7829,
+            1.0371
+          ],
+          "positive": true,
+          "values": [
+            0.9,
+            0.92
+          ]
+        }
+      },
+      "seed_level_execution_valid_cp": {
+        "DFSDT": {
+          "seeds": 2,
+          "mean": 0.63,
+          "sd": 0.0141,
+          "se": 0.01,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.5029,
+            0.7571
+          ],
+          "positive": true,
+          "values": [
+            0.64,
+            0.62
+          ]
+        },
+        "DRAFT": {
+          "seeds": 2,
+          "mean": 0.17,
+          "sd": 0.0,
+          "se": 0.0,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.17,
+            0.17
+          ],
+          "positive": true,
+          "values": [
+            0.17,
+            0.17
+          ]
+        },
+        "Ours": {
+          "seeds": 2,
+          "mean": 0.65,
+          "sd": 0.0141,
+          "se": 0.01,
+          "t_quantile": 12.7062,
+          "ci95": [
+            0.5229,
+            0.7771
+          ],
+          "positive": true,
+          "values": [
+            0.64,
+            0.66
+          ]
+        }
+      },
+      "paired_ours_minus_baseline": {
+        "DRAFT": {
+          "seeds": 2,
+          "mean": 0.035,
+          "sd": 0.0212,
+          "se": 0.015,
+          "t_quantile": 12.7062,
+          "ci95": [
+            -0.1556,
+            0.2256
+          ],
+          "positive": false,
+          "values": [
+            0.05,
+            0.02
+          ]
+        },
+        "Initial": {
+          "seeds": 2,
+          "mean": 0.015,
+          "sd": 0.0071,
+          "se": 0.005,
+          "t_quantile": 12.7062,
+          "ci95": [
+            -0.0485,
+            0.0785
+          ],
+          "positive": false,
+          "values": [
+            0.01,
+            0.02
+          ]
+        }
+      },
+      "paired_ours_minus_draft": {
+        "seeds": 2,
+        "mean": 0.035,
+        "sd": 0.0212,
+        "se": 0.015,
+        "t_quantile": 12.7062,
+        "ci95": [
+          -0.1556,
+          0.2256
+        ],
+        "positive": false,
+        "values": [
+          0.05,
+          0.02
+        ]
+      },
+      "query_level_cp_pooled": {
+        "DFSDT": {
+          "p": 0.895,
+          "low": 0.8448,
+          "high": 0.9303,
+          "n": 200,
+          "hits": 179
+        },
+        "DRAFT": {
+          "p": 0.875,
+          "low": 0.822,
+          "high": 0.9139,
+          "n": 200,
+          "hits": 175
+        },
+        "Ours": {
+          "p": 0.91,
+          "low": 0.8622,
+          "high": 0.9423,
+          "n": 200,
+          "hits": 182
+        }
+      },
+      "mechanics": {
+        "DFSDT": {
+          "n": 200,
+          "flags": {
+            "driver_error": 3,
+            "no_call": 3,
+            "first_producer_present": 194,
+            "intermediate_producer_present": 197,
+            "final_consumer_present": 190,
+            "repeat_producer": 42,
+            "wrong_first": 5,
+            "wrong_order": 5,
+            "parameter_or_http_error": 61,
+            "correct_path": 179
+          },
+          "misses": 21,
+          "missing_first_producer": 6,
+          "missing_intermediate_producer": 3,
+          "missing_final_consumer": 7,
+          "other_miss": 5
+        },
+        "DRAFT": {
+          "n": 200,
+          "flags": {
+            "driver_error": 5,
+            "no_call": 5,
+            "first_producer_present": 190,
+            "intermediate_producer_present": 196,
+            "final_consumer_present": 186,
+            "repeat_producer": 58,
+            "wrong_first": 7,
+            "wrong_order": 4,
+            "parameter_or_http_error": 154,
+            "correct_path": 175
+          },
+          "misses": 25,
+          "missing_first_producer": 10,
+          "missing_intermediate_producer": 2,
+          "missing_final_consumer": 9,
+          "other_miss": 4
+        },
+        "Ours": {
+          "n": 200,
+          "flags": {
+            "driver_error": 4,
+            "no_call": 5,
+            "first_producer_present": 189,
+            "intermediate_producer_present": 198,
+            "final_consumer_present": 190,
+            "repeat_producer": 37,
+            "wrong_first": 8,
+            "wrong_order": 4,
+            "parameter_or_http_error": 57,
+            "correct_path": 182
+          },
+          "misses": 18,
+          "missing_first_producer": 11,
+          "missing_intermediate_producer": 0,
+          "missing_final_consumer": 3,
+          "other_miss": 4
+        }
+      }
+    }
+  },
+  "paper_gate": {
+    "intervals": {
+      "flash:DRAFT": {
+        "replicates": 9,
+        "mean": -0.0156,
+        "sd": 0.0381,
+        "se": 0.0127,
+        "t_quantile": 2.306,
+        "ci95": [
+          -0.0449,
+          0.0137
+        ],
+        "positive": false,
+        "values": [
+          -0.04,
+          0.0,
+          0.01,
+          -0.04,
+          0.02,
+          -0.07,
+          -0.06,
+          0.04,
+          0.0
+        ]
+      },
+      "flash:Initial": {
+        "replicates": 9,
+        "mean": -0.0389,
+        "sd": 0.0369,
+        "se": 0.0123,
+        "t_quantile": 2.306,
+        "ci95": [
+          -0.0672,
+          -0.0105
+        ],
+        "positive": false,
+        "values": [
+          -0.02,
+          0.0,
+          -0.03,
+          -0.11,
+          -0.03,
+          -0.06,
+          -0.08,
+          -0.01,
+          -0.01
+        ]
+      },
+      "ling:DRAFT": {
+        "replicates": 9,
+        "mean": 0.0689,
+        "sd": 0.0271,
+        "se": 0.009,
+        "t_quantile": 2.306,
+        "ci95": [
+          0.048,
+          0.0897
+        ],
+        "positive": true,
+        "values": [
+          0.1,
+          0.08,
+          0.07,
+          0.02,
+          0.1,
+          0.04,
+          0.06,
+          0.06,
+          0.09
+        ]
+      },
+      "ling:Initial": {
+        "replicates": 9,
+        "mean": 0.0256,
+        "sd": 0.0522,
+        "se": 0.0174,
+        "t_quantile": 2.306,
+        "ci95": [
+          -0.0146,
+          0.0657
+        ],
+        "positive": false,
+        "values": [
+          0.13,
+          0.05,
+          0.01,
+          -0.01,
+          0.06,
+          -0.03,
+          0.02,
+          0.04,
+          -0.04
+        ]
+      }
+    },
+    "contrasts": [
+      "flash:DRAFT",
+      "flash:Initial",
+      "ling:DRAFT",
+      "ling:Initial"
+    ],
+    "failing": [
+      "flash:DRAFT",
+      "flash:Initial",
+      "ling:Initial"
+    ],
+    "met": false
+  },
+  "endpoint_drift": {
+    "ling_s04": {
+      "canonical_root": "artifacts\\results\\restbench_tmdb_ling_s04",
+      "canonical_created_at": "2026-09-07T19:56:30.452975+00:00",
+      "contemporaneous_root": "artifacts\\results\\validation\\currentnot_ling_s04",
+      "rows": {
+        "DFSDT": {
+          "n": 100,
+          "canonical": 91,
+          "now": 92,
+          "recovered": [
+            28,
+            30,
+            33,
+            55,
+            57,
+            69,
+            82
+          ],
+          "lost": [
+            53,
+            56,
+            62,
+            81,
+            86,
+            88
+          ]
+        },
+        "DRAFT": {
+          "n": 100,
+          "canonical": 88,
+          "now": 92,
+          "recovered": [
+            0,
+            4,
+            33,
+            40,
+            45,
+            55,
+            93
+          ],
+          "lost": [
+            64,
+            73,
+            98
+          ]
+        },
+        "Ours": {
+          "n": 100,
+          "canonical": 90,
+          "now": 91,
+          "recovered": [
+            35,
+            45,
+            66,
+            74,
+            81,
+            87,
+            89
+          ],
+          "lost": [
+            49,
+            57,
+            62,
+            67,
+            73,
+            83
+          ]
+        }
+      }
+    },
+    "ling_s07": {
+      "canonical_root": "artifacts\\results\\restbench_tmdb_ling_s07",
+      "canonical_created_at": "2026-09-07T20:26:19.539690+00:00",
+      "contemporaneous_root": "artifacts\\results\\validation\\currentnot_ling_s07",
+      "rows": {
+        "DFSDT": {
+          "n": 100,
+          "canonical": 89,
+          "now": 92,
+          "recovered": [
+            2,
+            50,
+            60,
+            61,
+            72,
+            81,
+            86,
+            89
+          ],
+          "lost": [
+            19,
+            28,
+            33,
+            87,
+            88
+          ]
+        },
+        "DRAFT": {
+          "n": 100,
+          "canonical": 85,
+          "now": 87,
+          "recovered": [
+            5,
+            11,
+            15,
+            24,
+            30,
+            34,
+            65,
+            86,
+            96,
+            97
+          ],
+          "lost": [
+            42,
+            53,
+            62,
+            70,
+            74,
+            89,
+            90,
+            98
+          ]
+        },
+        "Ours": {
+          "n": 100,
+          "canonical": 91,
+          "now": 91,
+          "recovered": [
+            28,
+            66,
+            81,
+            98
+          ],
+          "lost": [
+            27,
+            62,
+            64,
+            90
+          ]
+        }
+      }
+    },
+    "flash_s04": {
+      "canonical_root": "artifacts\\results\\restbench_tmdb_flash_s04",
+      "canonical_created_at": "2026-09-08T21:30:38.757703+00:00",
+      "contemporaneous_root": "artifacts\\results\\validation\\currentnot_flash_s04",
+      "rows": {
+        "DFSDT": {
+          "n": 100,
+          "canonical": 94,
+          "now": 89,
+          "recovered": [
+            15,
+            59,
+            60,
+            63,
+            97
+          ],
+          "lost": [
+            3,
+            8,
+            10,
+            52,
+            64,
+            76,
+            87,
+            93,
+            94,
+            96
+          ]
+        },
+        "DRAFT": {
+          "n": 100,
+          "canonical": 87,
+          "now": 85,
+          "recovered": [
+            13,
+            27,
+            32,
+            37,
+            52,
+            58,
+            67,
+            71,
+            91
+          ],
+          "lost": [
+            17,
+            22,
+            33,
+            42,
+            43,
+            59,
+            69,
+            74,
+            75,
+            93,
+            95
+          ]
+        },
+        "Ours": {
+          "n": 100,
+          "canonical": 83,
+          "now": 90,
+          "recovered": [
+            13,
+            20,
+            37,
+            39,
+            51,
+            57,
+            62,
+            66,
+            81,
+            84,
+            88
+          ],
+          "lost": [
+            27,
+            30,
+            34,
+            76
+          ]
+        }
+      }
+    },
+    "flash_s07": {
+      "canonical_root": "artifacts\\results\\restbench_tmdb_flash_s07",
+      "canonical_created_at": "2026-09-08T22:21:49.501470+00:00",
+      "contemporaneous_root": "artifacts\\results\\validation\\currentnot_flash_s07",
+      "rows": {
+        "DFSDT": {
+          "n": 100,
+          "canonical": 92,
+          "now": 90,
+          "recovered": [
+            10,
+            15,
+            32,
+            80,
+            88,
+            91
+          ],
+          "lost": [
+            43,
+            62,
+            64,
+            75,
+            84,
+            93,
+            96,
+            97
+          ]
+        },
+        "DRAFT": {
+          "n": 100,
+          "canonical": 90,
+          "now": 90,
+          "recovered": [
+            1,
+            13,
+            14,
+            31,
+            35,
+            59,
+            90
+          ],
+          "lost": [
+            4,
+            24,
+            30,
+            32,
+            50,
+            66,
+            93
+          ]
+        },
+        "Ours": {
+          "n": 100,
+          "canonical": 84,
+          "now": 92,
+          "recovered": [
+            0,
+            5,
+            10,
+            19,
+            23,
+            25,
+            26,
+            30,
+            39,
+            52,
+            59,
+            66,
+            88,
+            91
+          ],
+          "lost": [
+            4,
+            29,
+            32,
+            70,
+            76,
+            79
+          ]
+        }
+      }
+    }
+  },
+  "selection_bias_check": {
+    "ling_s04": {
+      "panel": {
+        "n": 10,
+        "was_failing": 1,
+        "recovered": 1,
+        "recovery_rate": 1.0,
+        "was_passing": 9,
+        "lost": 2,
+        "loss_rate": 0.222
+      },
+      "off_panel": {
+        "n": 90,
+        "was_failing": 9,
+        "recovered": 6,
+        "recovery_rate": 0.667,
+        "was_passing": 81,
+        "lost": 4,
+        "loss_rate": 0.049
+      }
+    },
+    "ling_s07": {
+      "panel": {
+        "n": 10,
+        "was_failing": 1,
+        "recovered": 1,
+        "recovery_rate": 1.0,
+        "was_passing": 9,
+        "lost": 1,
+        "loss_rate": 0.111
+      },
+      "off_panel": {
+        "n": 90,
+        "was_failing": 8,
+        "recovered": 3,
+        "recovery_rate": 0.375,
+        "was_passing": 82,
+        "lost": 3,
+        "loss_rate": 0.037
+      }
+    },
+    "flash_s04": {
+      "panel": {
+        "n": 10,
+        "was_failing": 8,
+        "recovered": 6,
+        "recovery_rate": 0.75,
+        "was_passing": 2,
+        "lost": 0,
+        "loss_rate": 0.0
+      },
+      "off_panel": {
+        "n": 90,
+        "was_failing": 9,
+        "recovered": 5,
+        "recovery_rate": 0.556,
+        "was_passing": 81,
+        "lost": 4,
+        "loss_rate": 0.049
+      }
+    },
+    "flash_s07": {
+      "panel": {
+        "n": 10,
+        "was_failing": 3,
+        "recovered": 3,
+        "recovery_rate": 1.0,
+        "was_passing": 7,
+        "lost": 0,
+        "loss_rate": 0.0
+      },
+      "off_panel": {
+        "n": 90,
+        "was_failing": 13,
+        "recovered": 11,
+        "recovery_rate": 0.846,
+        "was_passing": 77,
+        "lost": 6,
+        "loss_rate": 0.078
+      }
+    }
+  }
+}

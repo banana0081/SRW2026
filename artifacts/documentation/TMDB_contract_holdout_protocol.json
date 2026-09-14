@@ -1,0 +1,61 @@
+{
+  "protocol_version": "contract-holdout-v1",
+  "status": "frozen before any holdout model calls",
+  "purpose": "Select a documentation candidate for full n=100 validation without reusing outcome-selected discovery queries.",
+  "panel": {
+    "path": "artifacts/documentation/TMDB_contract_holdout_panel.json",
+    "selection_digest": "999bb5ffbe264de9eadaae4c958fdde087565cd1d444c0221166cbaa472f8a16",
+    "queries_per_seed": 24,
+    "selection_uses_model_outcomes": false
+  },
+  "models": {
+    "ling": "inclusionai/ling-3.0-flash",
+    "flash": "deepseek/deepseek-v4-flash-0731"
+  },
+  "seeds": [
+    11,
+    12
+  ],
+  "workers": 15,
+  "retry_rounds": 3,
+  "arms": {
+    "baselines": {
+      "DRAFT": "c224ca746b9ae40218190d1ce924d0fc16375f9c00a8d1638cde7ac64778ac66",
+      "CurrentNot": "e1ea9e00d04fef22c2ed14eb7f488a6c81fd3d9a76311c9bfa93aae0a319a52e"
+    },
+    "primary_candidates": {
+      "H1": "5431eece2799943036e31c1e77f44d4d50958526f49f9fa589a027116cd3f7e8",
+      "H2": "421eb9e338bbd4fac3fbd9e3c6fdc57e7c51e2b90c3f4481891a248af6a6f18e",
+      "H12": "e38e4c448a9e7330ebd96bc77537c4870d80b06ffa34792336710f90f34ccbd0"
+    },
+    "secondary_control": {
+      "H123": "d5bc29f6d0c3c232ffd6c5c22e95a6cb0a0c7a90fc81edaf8518c22bad744cba"
+    }
+  },
+  "rationale": {
+    "H12": "Tests composition of H1 and H2 without H3.",
+    "H123": "Retained as a secondary damage/control arm because H3 did not beat its shuffled-port control on the discovery panel.",
+    "discovery_panel": "May be used for mechanism diagnosis only, never for candidate selection."
+  },
+  "promotion_gate_per_model": {
+    "complete_cells_per_arm": 48,
+    "residual_driver_errors": 0,
+    "cp_floor": {
+      "ling": "41/48",
+      "flash": "44/48"
+    },
+    "paired_net_vs_DRAFT": "strictly positive",
+    "paired_net_vs_CurrentNot": "non-negative",
+    "missing_final_consumer": "no greater than CurrentNot"
+  },
+  "composition_gate": {
+    "H12_cp": "at least max(H1, H2) - 1 query in each model",
+    "interpretation": "Failure rejects the composability claim but does not reject an independently promoted H1 or H2."
+  },
+  "candidate_ranking": [
+    "maximize the smaller model-specific paired net versus DRAFT",
+    "maximize summed paired net versus DRAFT",
+    "prefer fewer modified documentation surfaces"
+  ],
+  "stop_rule": "If no primary candidate passes, do not spend on a full variant run; redesign the documentation hypothesis. CurrentNot full validation is reported separately and cannot promote H1/H2/H12."
+}

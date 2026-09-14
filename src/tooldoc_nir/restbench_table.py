@@ -40,15 +40,19 @@ from tooldoc_nir.draft_agent_reproduction import (
     FailureSink,
     HarnessFailure,
     LoggedOpenRouter,
+    PROVIDER_DRIFT,
     RELEASED_DECODING,
+    ProviderDrift,
     ReleasedDriverFailure,
+    TRANSPORT,
     _dump_json,
     _extract_json,
+    _load_json,
     load_released_draft_module,
     model_alias,
 )
 from tooldoc_nir.openrouter import OpenRouterClient, OpenRouterError, load_env_file
-from tooldoc_nir.provenance import file_digest
+from tooldoc_nir.provenance import file_digest, payload_digest
 from tooldoc_nir.restbench_adapt import url_index, wrap_instructions, wrap_query
 from tooldoc_nir.restbench_data import (
     DEFAULT_DRAFT_ROOT,
@@ -70,6 +74,64 @@ ROWS = (
     ("DRAFT", "draft", "DRAFT"),
     ("Ours", "dfsdt", "Ours"),
 )
+
+# The error policy, split so that the runner can retry infrastructure without
+# inventing a path:
+#
+# - `transport`      network, 429, 5xx, a dead provider. Identical retry.
+# - `provider_drift` the pinned endpoint was not the one that answered. Same
+#                    treatment as transport, reported separately.
+# - `driver`         a malformed or truncated completion after the released
+#                    three-sample resample. Inference_DFSDT then continues
+#                    (`{}` / None), it does not score the episode as a miss.
+#                    A leftover driver error is retried or dropped from n;
+#                    `cp_over_n` is not the published comparison.
+TRANSPORT_ERROR_KINDS = (TRANSPORT, PROVIDER_DRIFT)
+DRIVER_ERROR = "driver"
+
+
+def error_kind(row: dict[str, Any]) -> str:
+    """Read the error class off a trace row, defaulting to a model result."""
+    if not row.get("error"):
+        return ""
+    return str(row.get("error_kind") or DRIVER_ERROR)
+
+
+def is_transport_error(row: dict[str, Any]) -> bool:
+    return error_kind(row) in TRANSPORT_ERROR_KINDS
+
+
+def is_credits_exhausted(error: str | None) -> bool:
+    text = error or ""
+    return "HTTP 402" in text or "Insufficient credits" in text
+
+
+def is_endpoint_dead(error: str | None) -> bool:
+    """The chat endpoint never accepted a TCP connection.
+
+    Distinct from a slow completion or a 5xx: those still retry. A connect
+    timeout on a local box means the seed should stop, not spend hours
+    writing transport misses.
+    """
+    text = error or ""
+    return any(
+        marker in text
+        for marker in (
+            "ConnectTimeout",
+            "Connection refused",
+            "NewConnectionError",
+            "NameResolutionError",
+            "Failed to establish a new connection",
+        )
+    )
+
+
+def refuse_openrouter_for_local_model(model: str, client: Any) -> None:
+    token = (model or "").lower()
+    if "qwen" in token and not bool(getattr(client, "local", False)):
+        raise SystemExit(
+            f"{model} must use OPENAI_BASE_URL; refusing OpenRouter"
+        )
 
 
 _tls = threading.local()
@@ -133,7 +195,7 @@ def _install_driver(draft: Any) -> None:
                 max_tokens=max_tokens,
                 stage=stage,
                 structured=False,
-                seed=None,
+                seed=getattr(_tls, "seed", None),
             )
             if is_string:
                 return text
@@ -315,6 +377,7 @@ def _job(payload: dict[str, Any]) -> dict[str, Any]:
         budget=budget,
         context=context,
         failures=failures,
+        provider=payload.get("provider") or None,
     )
     backend = TmdbDfsdtBackend(tmdb, urls)
     counters = SimpleNamespace(unparsed_completions=0, format_resamples=0)
@@ -322,11 +385,13 @@ def _job(payload: dict[str, Any]) -> dict[str, Any]:
     _tls.context = context
     _tls.backend = backend
     _tls.counters = counters
+    _tls.seed = payload.get("seed")
     _tls.jsonl_path = None
     _tls.print_log = str(work / "console.log")
 
     record: dict[str, Any] | None = None
     error = ""
+    kind = ""
     try:
         if agent == "react":
             record = _run_react(
@@ -351,20 +416,30 @@ def _job(payload: dict[str, Any]) -> dict[str, Any]:
             )
         if failures.kind == "cost_cap":
             raise CostCapReached(failures.message)
+        if failures.kind == PROVIDER_DRIFT:
+            raise ProviderDrift(failures.message)
         if failures.pending:
             raise HarnessFailure(failures.message)
     except CostCapReached:
         raise
-    except (
-        ReleasedDriverFailure,
-        TypeError,
-        KeyError,
-        HarnessFailure,
-        OpenRouterError,
-    ) as exc:
+    except ProviderDrift as exc:
         error = f"{type(exc).__name__}: {exc}"
+        kind = PROVIDER_DRIFT
+    except (HarnessFailure, OpenRouterError) as exc:
+        error = f"{type(exc).__name__}: {exc}"
+        kind = TRANSPORT
+    except (ReleasedDriverFailure, TypeError, KeyError) as exc:
+        error = f"{type(exc).__name__}: {exc}"
+        kind = DRIVER_ERROR
     except Exception as exc:  # noqa: BLE001
         error = f"{type(exc).__name__}: {exc}"
+        kind = DRIVER_ERROR
+
+    # The released driver swallows exceptions in bare `except:` blocks, so a
+    # transport fault can surface as a driver-shaped error. The sink saw the
+    # original cause first and decides the class.
+    if error and failures.kind in TRANSPORT_ERROR_KINDS:
+        kind = failures.kind
 
     if error:
         with (work / "console.log").open("a", encoding="utf-8") as handle:
@@ -389,12 +464,38 @@ def _job(payload: dict[str, Any]) -> dict[str, Any]:
         "http_live": backend.live,
         "http_errors": backend.errors,
         "error": error,
+        "error_kind": kind,
         "final_answer": (record or {}).get("final_answer") or "",
+        "seed": payload.get("seed"),
+        "provider": payload.get("provider") or "",
     }
     (work / "result.json").write_text(
         json.dumps(row, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     return row
+
+
+def select_queries(
+    queries: list[dict[str, Any]],
+    *,
+    start: int = 0,
+    limit: int = 100,
+    indices: list[int] | None = None,
+) -> tuple[list[dict[str, Any]], list[int]]:
+    """Resolve the query slice and its true 0-based indices.
+
+    The pilot panel is a fixed, non-contiguous subset, so the indices have to
+    travel with the rows instead of being recomputed as `start + offset`;
+    otherwise a panel run would label q033 as q002 in its traces.
+    """
+    if indices:
+        chosen = list(dict.fromkeys(indices))
+        out_of_range = [index for index in chosen if not 0 <= index < len(queries)]
+        if out_of_range:
+            raise SystemExit(f"query indices out of range: {out_of_range}")
+        return [queries[index] for index in chosen], chosen
+    selected = queries[start : start + limit]
+    return selected, list(range(start, start + len(selected)))
 
 
 def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -405,10 +506,16 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
             continue
         scored = [row for row in subset if not row.get("error")]
         hits = sum(1 for row in scored if row.get("correct_path"))
+        kinds: dict[str, int] = {}
+        for row in subset:
+            kind = error_kind(row)
+            if kind:
+                kinds[kind] = kinds.get(kind, 0) + 1
         report[name] = {
             "n": len(subset),
             "ok": len(scored),
             "errors": len(subset) - len(scored),
+            "errors_by_kind": kinds,
             "cp": round(hits / len(scored), 4) if scored else None,
             "cp_over_n": round(hits / len(subset), 4) if subset else None,
             "hits": hits,
@@ -430,7 +537,24 @@ def main() -> int:
     )
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--limit", type=int, default=100)
+    parser.add_argument(
+        "--query-indices",
+        nargs="+",
+        type=int,
+        default=None,
+        help="Explicit 0-based query indices, overriding --start/--limit. The "
+        "pilot panel is a fixed subset, so the indices must appear in the "
+        "manifest instead of being implied by an offset.",
+    )
     parser.add_argument("--model", default=DEFAULT_MODEL)
+    parser.add_argument(
+        "--provider",
+        default=None,
+        help="Pin one OpenRouter provider slug with fallbacks disabled. Two "
+        "runs of the same model id served by different providers are not the "
+        "same measurement, so a served provider that differs from this one "
+        "fails the cell instead of being scored.",
+    )
     parser.add_argument("--workers", type=int, default=12)
     parser.add_argument("--retrieval-num", type=int, default=5)
     parser.add_argument("--max-cost-usd", type=float, default=2.00)
@@ -450,10 +574,25 @@ def main() -> int:
         type=Path,
         default=None,
     )
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Keep traces.jsonl and skip finished (row, query) pairs. "
+        "A recorded error is rerun.",
+    )
     parser.add_argument(
         "--retry-errors",
         action="store_true",
-        help="Rerun only (row, query) pairs that already failed in output-root traces.",
+        help="Rerun every (row, query) whose traces recorded an error. "
+        "The released driver resamples a bad completion and continues; "
+        "a leftover error is retried, not scored as a miss.",
+    )
+    parser.add_argument(
+        "--retry-driver-errors",
+        action="store_true",
+        help="Deprecated alias: --retry-errors already re-rolls driver "
+        "failures, matching Inference_DFSDT.",
     )
     args = parser.parse_args()
     dataset = args.dataset
@@ -485,26 +624,32 @@ def main() -> int:
             client_id, client_secret, refresh_token=refresh, cache=cache
         )
 
-    raw_queries = load_queries(args.draft_root, dataset)[
-        args.start : args.start + args.limit
-    ]
+    raw_queries, indices = select_queries(
+        load_queries(args.draft_root, dataset),
+        start=args.start,
+        limit=args.limit,
+        indices=args.query_indices,
+    )
     selected = [row for row in ROWS if row[0] in args.rows]
     raw_docs = {
         "Initial": load_instructions(args.draft_root, dataset, "Initial"),
         "DRAFT": load_instructions(args.draft_root, dataset, "DRAFT"),
     }
     if any(name == "Ours" for name, _agent, _docs in selected):
-        ours, ours_report = build_ours_instructions(
-            raw_docs["Initial"],
-            client=http if dataset == "TMDB" else None,
-            base_name="Initial",
-        )
-        args.ours_docs.parent.mkdir(parents=True, exist_ok=True)
-        _dump_json(args.ours_docs, ours)
-        _dump_json(
-            args.ours_docs.with_name(f"{dataset}_Ours_report.json"), ours_report
-        )
-        raw_docs["Ours"] = ours
+        if args.ours_docs.exists():
+            raw_docs["Ours"] = _load_json(args.ours_docs)
+        else:
+            ours, ours_report = build_ours_instructions(
+                raw_docs["Initial"],
+                client=http if dataset == "TMDB" else None,
+                base_name="Initial",
+            )
+            args.ours_docs.parent.mkdir(parents=True, exist_ok=True)
+            _dump_json(args.ours_docs, ours)
+            _dump_json(
+                args.ours_docs.with_name(f"{dataset}_Ours_report.json"), ours_report
+            )
+            raw_docs["Ours"] = ours
     docs = {
         name: wrap_instructions(value, category=dataset)
         for name, value in raw_docs.items()
@@ -523,6 +668,7 @@ def main() -> int:
             if line.strip()
         ]
     retry_keys: set[tuple[str, int]] = set()
+    skip_keys: set[tuple[str, int]] = set()
     if args.retry_errors:
         retry_keys = {
             (str(row.get("row")), int(row.get("query_index") or 0))
@@ -530,7 +676,14 @@ def main() -> int:
             if row.get("error")
         }
         if not retry_keys:
-            raise SystemExit("No failed rows in traces.jsonl.")
+            print("No retryable rows in traces.jsonl.", flush=True)
+            return 0
+    elif args.resume:
+        skip_keys = {
+            (str(row.get("row")), int(row.get("query_index") or 0))
+            for row in existing
+            if not row.get("error")
+        }
     elif traces_path.exists():
         traces_path.unlink()
         existing = []
@@ -540,8 +693,11 @@ def main() -> int:
         "dataset": f"RestBench-{dataset}",
         "n": len(raw_queries),
         "start": args.start,
+        "query_indices": indices,
         "model": args.model,
+        "provider": args.provider or "",
         "workers": args.workers,
+        "seed": args.seed,
         "retrieval_num": args.retrieval_num,
         "decoding": RELEASED_DECODING,
         "driver": f"external/DRAFT/Inference_DFSDT.py verbatim + {dataset} HTTP",
@@ -562,6 +718,10 @@ def main() -> int:
                     if name == "Ours"
                     else instruction_path(args.draft_root, dataset, name)
                 ),
+                # file_digest changes with the line endings of the machine that
+                # wrote the JSON; the payload digest is what identifies the
+                # documentation across runs.
+                "payload_digest": payload_digest(raw_docs[name]),
             }
             for name in raw_docs
         },
@@ -570,6 +730,11 @@ def main() -> int:
     _dump_json(run_root / "manifest.json", manifest)
 
     client = OpenRouterClient.from_env()
+    refuse_openrouter_for_local_model(args.model, client)
+    print(
+        f"transport={'local' if client.local else 'openrouter'}",
+        flush=True,
+    )
     budget = CostBudget(args.max_cost_usd)
     budget_lock = threading.Lock()
     draft = load_released_draft_module(args.draft_root)
@@ -577,10 +742,12 @@ def main() -> int:
 
     jobs = []
     for offset, (raw, wrapped) in enumerate(zip(raw_queries, wrapped_queries)):
-        index = args.start + offset
+        index = indices[offset]
         gold = gold_apis(raw)
         for name, agent, condition in selected:
             if retry_keys and (name, index) not in retry_keys:
+                continue
+            if skip_keys and (name, index) in skip_keys:
                 continue
             jobs.append(
                 {
@@ -591,7 +758,9 @@ def main() -> int:
                     "query": wrapped,
                     "dataset": docs[condition],
                     "model": args.model,
+                    "provider": args.provider,
                     "retrieval_num": args.retrieval_num,
+                    "seed": args.seed,
                     "work": str(run_root / name.lower() / f"q{index:03d}"),
                     "client": client,
                     "budget": budget,
@@ -604,8 +773,9 @@ def main() -> int:
 
     print(
         f"RestBench-{dataset} table {len(raw_queries)} queries x {len(selected)} rows, "
-        f"{args.workers} workers, {args.model}"
-        + (f", retry {len(jobs)} failed jobs" if retry_keys else ""),
+        f"{args.workers} workers, {args.model}, seed={args.seed}"
+        + (f", retry {len(jobs)} failed jobs" if retry_keys else "")
+        + (f", resume skip {len(skip_keys)}" if skip_keys else ""),
         flush=True,
     )
     live_trace = (
@@ -614,30 +784,57 @@ def main() -> int:
     if retry_keys and live_trace.exists():
         live_trace.unlink()
     rows: list[dict[str, Any]] = []
+    consecutive_dead = 0
     try:
-        with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            futures = [pool.submit(_job, job) for job in jobs]
-            done = 0
-            for future in as_completed(futures):
-                row = future.result()
-                rows.append(row)
-                with _log_lock:
-                    with live_trace.open("a", encoding="utf-8") as handle:
-                        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
-                done += 1
-                flag = "Y" if row.get("correct_path") else "n"
-                with _print_lock:
-                    print(
-                        f"{done}/{len(jobs)} {row.get('row')} q{row.get('query_index')} "
-                        f"CP={flag} live={row.get('http_live')} ${row.get('cost_usd')} "
-                        f"{(row.get('error') or '')[:80]}",
-                        flush=True,
-                    )
+        if jobs:
+            with ThreadPoolExecutor(max_workers=args.workers) as pool:
+                futures = [pool.submit(_job, job) for job in jobs]
+                done = 0
+                for future in as_completed(futures):
+                    row = future.result()
+                    rows.append(row)
+                    with _log_lock:
+                        with live_trace.open("a", encoding="utf-8") as handle:
+                            handle.write(
+                                json.dumps(row, ensure_ascii=False) + "\n"
+                            )
+                    done += 1
+                    flag = "Y" if row.get("correct_path") else "n"
+                    with _print_lock:
+                        print(
+                            f"{done}/{len(jobs)} {row.get('row')} "
+                            f"q{row.get('query_index')} "
+                            f"CP={flag} live={row.get('http_live')} "
+                            f"${row.get('cost_usd')} "
+                            f"{(row.get('error') or '')[:80]}",
+                            flush=True,
+                        )
+                    if is_credits_exhausted(row.get("error")):
+                        print(
+                            "STOP credits-exhausted: OpenRouter HTTP 402",
+                            flush=True,
+                        )
+                        for pending in futures:
+                            pending.cancel()
+                        return 2
+                    if is_endpoint_dead(row.get("error")):
+                        consecutive_dead += 1
+                        if consecutive_dead >= max(int(args.workers), 3):
+                            print(
+                                "STOP endpoint unreachable: "
+                                f"{consecutive_dead} connect failures in a row",
+                                flush=True,
+                            )
+                            for pending in futures:
+                                pending.cancel()
+                            return 3
+                    else:
+                        consecutive_dead = 0
     except CostCapReached as exc:
         print(f"STOP cost-cap: {exc}", flush=True)
 
     retry_cost = round(budget.spent_usd, 6)
-    if retry_keys:
+    if retry_keys or skip_keys:
         merged = {
             (str(row.get("row")), int(row.get("query_index") or 0)): row
             for row in existing
@@ -652,14 +849,16 @@ def main() -> int:
     rows.sort(key=lambda row: (str(row.get("row")), int(row.get("query_index") or 0)))
     previous_cost = 0.0
     old_summary = run_root / "summary.json"
-    if retry_keys and old_summary.exists():
+    if (retry_keys or skip_keys) and old_summary.exists():
         previous_cost = float(
             json.loads(old_summary.read_text(encoding="utf-8")).get("cost_usd") or 0.0
         )
     summary = {
         "manifest": manifest,
         "conditions": summarize(rows),
-        "cost_usd": round(previous_cost + retry_cost, 6) if retry_keys else retry_cost,
+        "cost_usd": round(
+            previous_cost + retry_cost, 6
+        ) if retry_keys or skip_keys else retry_cost,
         "retry_cost_usd": retry_cost if retry_keys else 0.0,
         "cap_usd": args.max_cost_usd,
         "cache_entries": len(cache),

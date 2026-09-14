@@ -1,0 +1,52 @@
+{
+  "variant": "P",
+  "dataset": "TMDB",
+  "created_at": "2026-09-09T15:07:25.793471+00:00",
+  "git_commit": "2827dc3c064183de3c8fa0bab00aeafc9dcf26b5",
+  "flags": {
+    "base": "Initial",
+    "fingerprint_in_tool_description": false,
+    "ports_in_description": false,
+    "witness_in_example": false,
+    "fill_line_in_description": false,
+    "shuffled_port_control": false,
+    "copied_frozen_documentation": null,
+    "negation_free_catalog_scope": true,
+    "role_clause_on_reference_endpoints": false,
+    "guideline_inherited_from": "artifacts/documentation/{dataset}_Ours.json"
+  },
+  "base_documentation": {
+    "name": "Initial",
+    "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_Initial.json",
+    "file_digest": "af196035e3f68940026807ed2337231054733d538a7ba9406931df89cbb18f0d",
+    "payload_digest": "7203d53e2755b6d63c0d616c0aac0826d806862aede6a6dce856a70804cfee90"
+  },
+  "payload_digest": "cff6500108cc31527215f33ee45f5e9d2794228fb9becd4965dca6bd84d6016f",
+  "n": 54,
+  "provenance": {
+    "inputs": [
+      "tool_instruction JSON",
+      "endpoint URLs",
+      "generic live probes"
+    ],
+    "benchmark_readers_absent": [
+      "load_queries",
+      "gold_apis",
+      "correct_path",
+      "test_path",
+      "load_traces"
+    ],
+    "compiler_digest": "da6ed1448aab13379054df29579ab813a5922a1ec7e784d3379373687ed17e65",
+    "ours_compiler_digest": "a195f34c6c163589d3ac7e6e2bc1d83691df5fc786842f71b9e26d34a686a198"
+  },
+  "probe": {
+    "probed": false
+  },
+  "gold_used": false,
+  "schema_changed": {},
+  "surfaces_touched": {
+    "tool_description": 19,
+    "description": 52,
+    "example": 0
+  }
+}

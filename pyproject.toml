@@ -17,6 +17,7 @@ dependencies = [
     "remotezip>=0.12",
     "requests>=2.32",
     "scikit-learn>=1.5",
+    "scipy>=1.11",
     "sentence-transformers>=3.3",
     "nltk>=3.9",
 ]

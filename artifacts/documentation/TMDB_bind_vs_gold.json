@@ -1,0 +1,325 @@
+{
+  "n_queries": 100,
+  "n_gold_hops": 123,
+  "n_first_hops": 1,
+  "n_covered": 91,
+  "covered_share": 0.7398373983739838,
+  "later_hops": 122,
+  "later_covered": 91,
+  "later_covered_share": 0.7459016393442623,
+  "n_later_misses": 31,
+  "later_miss_examples": [
+    {
+      "query_index": 5,
+      "gold": [
+        "GET_search_movie",
+        "GET_movie_movie_id_credits",
+        "GET_person_person_id_images"
+      ],
+      "tool": "GET_person_person_id_images",
+      "params": [
+        {
+          "param": "person_id",
+          "producers": [
+            "GET_search_person",
+            "GET_person_popular",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 10,
+      "gold": [
+        "GET_search_person",
+        "GET_person_person_id_movie_credits",
+        "GET_movie_movie_id_credits"
+      ],
+      "tool": "GET_movie_movie_id_credits",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 15,
+      "gold": [
+        "GET_search_tv",
+        "GET_tv_tv_id_season_season_number_episode_episode_number_images"
+      ],
+      "tool": "GET_tv_tv_id_season_season_number_episode_episode_number_images",
+      "params": [
+        {
+          "param": "tv_id",
+          "producers": [
+            "GET_search_tv",
+            "GET_discover_tv",
+            "GET_tv_popular",
+            "GET_tv_top_rated",
+            "GET_tv_on_the_air",
+            "GET_tv_airing_today",
+            "GET_tv_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": [
+            "GET_search_tv"
+          ]
+        },
+        {
+          "param": "season_number",
+          "producers": [
+            "GET_tv_tv_id"
+          ],
+          "prior_hit": []
+        },
+        {
+          "param": "episode_number",
+          "producers": [
+            "GET_tv_tv_id_season_season_number"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 19,
+      "gold": [
+        "GET_search_person",
+        "GET_person_person_id_movie_credits",
+        "GET_movie_movie_id_images"
+      ],
+      "tool": "GET_movie_movie_id_images",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 22,
+      "gold": [
+        "GET_search_person",
+        "GET_person_person_id_movie_credits",
+        "GET_movie_movie_id_release_dates"
+      ],
+      "tool": "GET_movie_movie_id_release_dates",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 24,
+      "gold": [
+        "GET_search_person",
+        "GET_person_person_id_movie_credits",
+        "GET_movie_movie_id_similar"
+      ],
+      "tool": "GET_movie_movie_id_similar",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 30,
+      "gold": [
+        "GET_company_company_id",
+        "GET_company_company_id_images"
+      ],
+      "tool": "GET_company_company_id_images",
+      "params": [
+        {
+          "param": "company_id",
+          "producers": [
+            "GET_search_company",
+            "GET_movie_movie_id",
+            "GET_tv_tv_id"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 33,
+      "gold": [
+        "GET_search_collection",
+        "GET_collection_collection_id",
+        "GET_movie_movie_id_credits"
+      ],
+      "tool": "GET_movie_movie_id_credits",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 34,
+      "gold": [
+        "GET_search_collection",
+        "GET_collection_collection_id",
+        "GET_movie_movie_id_images"
+      ],
+      "tool": "GET_movie_movie_id_images",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 35,
+      "gold": [
+        "GET_search_collection",
+        "GET_collection_collection_id",
+        "GET_movie_movie_id_keywords"
+      ],
+      "tool": "GET_movie_movie_id_keywords",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 38,
+      "gold": [
+        "GET_search_collection",
+        "GET_collection_collection_id",
+        "GET_movie_movie_id_reviews"
+      ],
+      "tool": "GET_movie_movie_id_reviews",
+      "params": [
+        {
+          "param": "movie_id",
+          "producers": [
+            "GET_search_movie",
+            "GET_discover_movie",
+            "GET_movie_popular",
+            "GET_movie_now_playing",
+            "GET_movie_top_rated",
+            "GET_movie_upcoming",
+            "GET_movie_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": []
+        }
+      ]
+    },
+    {
+      "query_index": 40,
+      "gold": [
+        "GET_search_tv",
+        "GET_tv_tv_id_season_season_number_credits"
+      ],
+      "tool": "GET_tv_tv_id_season_season_number_credits",
+      "params": [
+        {
+          "param": "tv_id",
+          "producers": [
+            "GET_search_tv",
+            "GET_discover_tv",
+            "GET_tv_popular",
+            "GET_tv_top_rated",
+            "GET_tv_on_the_air",
+            "GET_tv_airing_today",
+            "GET_tv_latest",
+            "GET_trending_media_type_time_window"
+          ],
+          "prior_hit": [
+            "GET_search_tv"
+          ]
+        },
+        {
+          "param": "season_number",
+          "producers": [
+            "GET_tv_tv_id"
+          ],
+          "prior_hit": []
+        }
+      ]
+    }
+  ]
+}

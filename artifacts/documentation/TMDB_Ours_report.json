@@ -9,12 +9,24 @@
   "schema_changed": false,
   "prose_rewritten": false,
   "hop_style": "fill",
-  "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs",
+  "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs_with_not",
   "gold_used": false,
   "probe": {
     "ok": 0,
     "fail": 0,
     "calls": 0
   },
-  "seed_ids": {}
+  "seed_ids": {},
+  "documentation": {
+    "path": "artifacts\\documentation\\TMDB_Ours.json",
+    "bytes": 69925,
+    "file_digest": "ad3dc76025788f8c10822acfe7211ba9e3ca8d293fcaa42698bc0762c939b3eb",
+    "payload_digest": "e1ea9e00d04fef22c2ed14eb7f488a6c81fd3d9a76311c9bfa93aae0a319a52e"
+  },
+  "reproduced_by": "scripts/freeze_baselines.py",
+  "corrected_label": {
+    "was": "base_purpose_on_hops_scope_on_catalogs_no_not",
+    "now": "base_purpose_on_hops_scope_on_catalogs_with_not",
+    "reason": "label was hand-written and did not match the frozen text"
+  }
 }

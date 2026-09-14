@@ -1,0 +1,1763 @@
+{
+  "named": {
+    "sofia_coppola": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Sofia Coppola",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "dark_knight": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Dark Knight",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "star_wars": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Star Wars",
+        "type": "collection",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "walt_disney": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Walt Disney",
+        "type": "company",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "titanic": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Titanic",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "christopher_nolan": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Christopher Nolan",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "martin_scorsese": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Martin Scorsese",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "leonardo_dicaprio": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Leonardo DiCaprio",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "catherine_hardwicke": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Catherine Hardwicke",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "breaking_bad": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Breaking Bad",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "twilight": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Twilight",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "the_matrix": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Matrix",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "clint_eastwood": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Clint Eastwood",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "francis_ford_coppola": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Francis Ford Coppola",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "paramount_pictures": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [
+        "309902",
+        "4",
+        "6248",
+        "100612",
+        "90738"
+      ],
+      "search": {
+        "query": "Paramount Pictures",
+        "type": "company",
+        "ids": [
+          "309902",
+          "4",
+          "6248",
+          "100612",
+          "90738"
+        ],
+        "names": [
+          "Paramount pictures",
+          "Paramount Pictures",
+          "Paramount Pictures France",
+          "Paramount Pictures International",
+          "Paramount Pictures Canada"
+        ]
+      }
+    },
+    "universal_pictures": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [
+        "33",
+        "103915",
+        "42",
+        "135539",
+        "58898"
+      ],
+      "search": {
+        "query": "Universal Pictures",
+        "type": "company",
+        "ids": [
+          "33",
+          "103915",
+          "42",
+          "135539",
+          "58898"
+        ],
+        "names": [
+          "Universal Pictures",
+          "Universal Pictures (Australasia)",
+          "Universal Pictures Corporation",
+          "Universal Pictures Australia",
+          "Universal Pictures Benelux"
+        ]
+      }
+    },
+    "harry_potter": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "1241"
+      ],
+      "company_ids": [],
+      "search": {
+        "query": "Harry Potter",
+        "type": "collection",
+        "ids": [
+          "1241"
+        ],
+        "names": [
+          "Harry Potter Collection"
+        ],
+        "movie_ids": [],
+        "collection_ids": [
+          "1241"
+        ]
+      }
+    },
+    "hunger_games": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "131635"
+      ],
+      "company_ids": [],
+      "search": {
+        "query": "The Hunger Games",
+        "type": "collection",
+        "ids": [
+          "131635",
+          "1701563"
+        ],
+        "names": [
+          "The Hunger Games Collection",
+          "The Hunger Games – New Trilogy Collection"
+        ],
+        "movie_ids": [],
+        "collection_ids": [
+          "131635"
+        ]
+      }
+    },
+    "the_hobbit": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "121938"
+      ],
+      "company_ids": [],
+      "search": {
+        "query": "The Hobbit",
+        "type": "collection",
+        "ids": [
+          "121938"
+        ],
+        "names": [
+          "The Hobbit Collection"
+        ],
+        "movie_ids": [],
+        "collection_ids": [
+          "121938"
+        ]
+      }
+    },
+    "fast_and_the_furious": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "9485"
+      ],
+      "company_ids": [],
+      "search": {
+        "query": "The Fast and the Furious",
+        "type": "collection",
+        "ids": [
+          "9485"
+        ],
+        "names": [
+          "The Fast and the Furious Collection"
+        ],
+        "movie_ids": [],
+        "collection_ids": [
+          "9485"
+        ]
+      }
+    },
+    "lord_of_the_rings": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "1173608"
+      ],
+      "company_ids": [],
+      "search": {
+        "query": "The Lord of the Rings",
+        "type": "collection",
+        "ids": [
+          "1173608",
+          "119",
+          "141290"
+        ],
+        "names": [
+          "The Making of The Lord of the Rings Collection",
+          "The Lord of the Rings Collection",
+          "The Lord of the Rings (Animated) Collection"
+        ],
+        "movie_ids": [],
+        "collection_ids": [
+          "1173608"
+        ]
+      }
+    },
+    "lord_of_the_ring": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Lord of the Rings",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "house_of_cards": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "House of Cards",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "django_unchained": {
+      "movie_ids": [
+        "68718",
+        "854521",
+        "1062853"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Django Unchained",
+        "type": "movie",
+        "ids": [
+          "68718",
+          "854521",
+          "1062853"
+        ],
+        "names": [
+          "Django Unchained",
+          "Django & Django: Sergio Corbucci Unchained",
+          "Django Unchained: Reimagining The Spaghetti Western: A Making-Of Documentary"
+        ]
+      }
+    },
+    "the_last_of_us": {
+      "movie_ids": [],
+      "tv_ids": [
+        "100088",
+        "62141",
+        "67834"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Last of Us",
+        "type": "tv",
+        "ids": [
+          "100088",
+          "62141",
+          "67834"
+        ],
+        "names": [
+          "The Last of Us",
+          "The Last of Us Development Series",
+          "Autopsy: The Last Hours of..."
+        ]
+      }
+    },
+    "friends": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Friends",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "2_broke_girls": {
+      "movie_ids": [],
+      "tv_ids": [
+        "39340",
+        "87955",
+        "313117"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "2 Broke Girls",
+        "type": "tv",
+        "ids": [
+          "39340",
+          "87955",
+          "313117"
+        ],
+        "names": [
+          "2 Broke Girls",
+          "Two Broke Girls",
+          "破产姐妹"
+        ]
+      }
+    },
+    "big_bang_theory": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1418",
+        "322995"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Big Bang Theory",
+        "type": "tv",
+        "ids": [
+          "1418",
+          "322995"
+        ],
+        "names": [
+          "The Big Bang Theory",
+          "The Official Big Bang Theory Podcast"
+        ]
+      }
+    },
+    "westworld": {
+      "movie_ids": [],
+      "tv_ids": [
+        "63247",
+        "411"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Westworld",
+        "type": "tv",
+        "ids": [
+          "63247",
+          "411"
+        ],
+        "names": [
+          "Westworld",
+          "Beyond Westworld"
+        ]
+      }
+    },
+    "game_of_thrones": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Game of Thrones",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "band_of_brothers": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Band of Brothers",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "the_mandalorian": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Mandalorian",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "mandalorian": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Mandalorian",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "jeremy_clarkson": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Jeremy Clarkson",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "black_mirror": {
+      "movie_ids": [],
+      "tv_ids": [
+        "42009",
+        "79100"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Black Mirror",
+        "type": "tv",
+        "ids": [
+          "42009",
+          "79100"
+        ],
+        "names": [
+          "Black Mirror",
+          "Little Black Mirror"
+        ]
+      }
+    },
+    "cate_blanchett": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Cate Blanchett",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "david_schwimmer": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "David Schwimmer",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "avatar:_the_way_of_water": {
+      "movie_ids": [
+        "76600"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Avatar: The Way of Water",
+        "type": "movie",
+        "ids": [
+          "76600"
+        ],
+        "names": [
+          "Avatar: The Way of Water"
+        ]
+      }
+    },
+    "avatar": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Avatar",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "shawshank": {
+      "movie_ids": [
+        "278",
+        "897459",
+        "1490289"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Shawshank Redemption",
+        "type": "movie",
+        "ids": [
+          "278",
+          "897459",
+          "1490289"
+        ],
+        "names": [
+          "The Shawshank Redemption",
+          "Hope Springs Eternal: A Look Back at The Shawshank Redemption",
+          "The East Jaunty Redemption"
+        ]
+      }
+    },
+    "double_life_of_veronique": {
+      "movie_ids": [
+        "1600"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Double Life of Veronique",
+        "type": "movie",
+        "ids": [
+          "1600"
+        ],
+        "names": [
+          "The Double Life of Véronique"
+        ]
+      }
+    },
+    "mulholland_drive": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Mulholland Drive",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "twin_peaks": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1920"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Twin Peaks",
+        "type": "tv",
+        "ids": [
+          "1920"
+        ],
+        "names": [
+          "Twin Peaks"
+        ]
+      }
+    },
+    "akira_kurosawa": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Akira Kurosawa",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "spielberg": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Steven Spielberg",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "scarlett_johansson": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Scarlett Johansson",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "sword_art_online": {
+      "movie_ids": [],
+      "tv_ids": [
+        "45782",
+        "78204"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Sword Art Online",
+        "type": "tv",
+        "ids": [
+          "45782",
+          "78204"
+        ],
+        "names": [
+          "Sword Art Online",
+          "Sword Art Online Alternative: Gun Gale Online"
+        ]
+      }
+    },
+    "yui_aragaki": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Yui Aragaki",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "gen_hoshino": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Gen Hoshino",
+        "type": "person",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "we_married_as_job": {
+      "movie_ids": [
+        "960478"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "We Married as a Job",
+        "type": "movie",
+        "ids": [
+          "960478"
+        ],
+        "names": [
+          "The Full-Time Wife Escapist: New Year's Special"
+        ]
+      }
+    },
+    "barbie": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Barbie",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "death_note": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Death Note",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "katherine_lanasa": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [
+        "169337"
+      ],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Katherine LaNasa",
+        "type": "person",
+        "ids": [
+          "169337"
+        ],
+        "names": [
+          "Katherine LaNasa"
+        ]
+      }
+    },
+    "oppenheimer": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "Oppenheimer",
+        "type": "movie",
+        "error": "bad_json",
+        "ids": []
+      }
+    },
+    "the_witcher": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [],
+      "search": {
+        "query": "The Witcher",
+        "type": "tv",
+        "error": "bad_json",
+        "ids": []
+      }
+    }
+  },
+  "hints": [
+    [
+      "sofia coppola",
+      "sofia_coppola"
+    ],
+    [
+      "dark knight",
+      "dark_knight"
+    ],
+    [
+      "star wars",
+      "star_wars"
+    ],
+    [
+      "walt disney",
+      "walt_disney"
+    ],
+    [
+      "titanic",
+      "titanic"
+    ],
+    [
+      "christopher nolan",
+      "christopher_nolan"
+    ],
+    [
+      "martin scorsese",
+      "martin_scorsese"
+    ],
+    [
+      "leonardo dicaprio",
+      "leonardo_dicaprio"
+    ],
+    [
+      "catherine hardwicke",
+      "catherine_hardwicke"
+    ],
+    [
+      "breaking bad",
+      "breaking_bad"
+    ],
+    [
+      "twilight",
+      "twilight"
+    ],
+    [
+      "the matrix",
+      "the_matrix"
+    ],
+    [
+      "clint eastwood",
+      "clint_eastwood"
+    ],
+    [
+      "francis ford coppola",
+      "francis_ford_coppola"
+    ],
+    [
+      "paramount pictures",
+      "paramount_pictures"
+    ],
+    [
+      "universal pictures",
+      "universal_pictures"
+    ],
+    [
+      "harry potter",
+      "harry_potter"
+    ],
+    [
+      "hunger games",
+      "hunger_games"
+    ],
+    [
+      "the hobbit",
+      "the_hobbit"
+    ],
+    [
+      "fast and the furious",
+      "fast_and_the_furious"
+    ],
+    [
+      "lord of the rings",
+      "lord_of_the_rings"
+    ],
+    [
+      "lord of the ring",
+      "lord_of_the_ring"
+    ],
+    [
+      "house of cards",
+      "house_of_cards"
+    ],
+    [
+      "django unchained",
+      "django_unchained"
+    ],
+    [
+      "the last of us",
+      "the_last_of_us"
+    ],
+    [
+      "friends",
+      "friends"
+    ],
+    [
+      "2 broke girls",
+      "2_broke_girls"
+    ],
+    [
+      "big bang theory",
+      "big_bang_theory"
+    ],
+    [
+      "westworld",
+      "westworld"
+    ],
+    [
+      "game of thrones",
+      "game_of_thrones"
+    ],
+    [
+      "band of brothers",
+      "band_of_brothers"
+    ],
+    [
+      "the mandalorian",
+      "the_mandalorian"
+    ],
+    [
+      "mandalorian",
+      "mandalorian"
+    ],
+    [
+      "jeremy clarkson",
+      "jeremy_clarkson"
+    ],
+    [
+      "black mirror",
+      "black_mirror"
+    ],
+    [
+      "cate blanchett",
+      "cate_blanchett"
+    ],
+    [
+      "david schwimmer",
+      "david_schwimmer"
+    ],
+    [
+      "avatar: the way of water",
+      "avatar:_the_way_of_water"
+    ],
+    [
+      "avatar",
+      "avatar"
+    ],
+    [
+      "shawshank",
+      "shawshank"
+    ],
+    [
+      "double life of veronique",
+      "double_life_of_veronique"
+    ],
+    [
+      "mulholland drive",
+      "mulholland_drive"
+    ],
+    [
+      "twin peaks",
+      "twin_peaks"
+    ],
+    [
+      "akira kurosawa",
+      "akira_kurosawa"
+    ],
+    [
+      "spielberg",
+      "spielberg"
+    ],
+    [
+      "scarlett johansson",
+      "scarlett_johansson"
+    ],
+    [
+      "sword art online",
+      "sword_art_online"
+    ],
+    [
+      "yui aragaki",
+      "yui_aragaki"
+    ],
+    [
+      "gen hoshino",
+      "gen_hoshino"
+    ],
+    [
+      "we married as job",
+      "we_married_as_job"
+    ],
+    [
+      "barbie",
+      "barbie"
+    ],
+    [
+      "death note",
+      "death_note"
+    ],
+    [
+      "katherine lanasa",
+      "katherine_lanasa"
+    ],
+    [
+      "oppenheimer",
+      "oppenheimer"
+    ],
+    [
+      "the witcher",
+      "the_witcher"
+    ]
+  ],
+  "by_query": {
+    "give me the number of movies directed by Sofia Coppola": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who was the lead actor in the movie The Dark Knight?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me a image for the collection Star Wars": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the logo of the Walt Disney?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What dose the lead actor of Titanic look like?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me some reviews of the first movie that is similar to Titanic": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "I just finished watching Titanic and I want some other movie recommendations": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the latest movie directed by Christopher Nolan?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "tell me the highest rated movie directed by Martin Scorsese": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who is the director of Leonardo DiCaprio's latest movie?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "tell me a TV show recently directed by Catherine Hardwicke": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Please recommend me some TV shows similar to Breaking Bad": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who is the director of the movie \"Twilight\"?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me a photo belong to the second episode of the first season of the Witcher": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the release date of the movie \"The Matrix\"?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Give me some cover images of movies directed by Christopher Nolan.": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What are some common keywords associated with movie \"Titanic\"?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When is Clint Eastwood's latest movie scheduled to be released?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Give me some movie reviews about The Dark Knight": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What are some movies that are similar to one of the movies directed by Francis Ford Coppola?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who has starred in a movie \"Titanic\"": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What do the logo looks like for Paramount Pictures?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [
+        "309902",
+        "4",
+        "6248",
+        "100612",
+        "90738"
+      ]
+    },
+    "tell me where the company \"universal pictures\" was founded?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": [
+        "33",
+        "103915",
+        "42",
+        "135539",
+        "58898"
+      ]
+    },
+    "When is the movie \"Titanic\" released?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who has starred in the first movie of Star Wars collection?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me a movie cover of a movie from the collection Harry Potter": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "1241"
+      ],
+      "company_ids": []
+    },
+    "What are some keywords for a movie of the collection The Hunger Games?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "131635"
+      ],
+      "company_ids": []
+    },
+    "When are the release dates for the movies of the collection The Hobbit?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "121938"
+      ],
+      "company_ids": []
+    },
+    "List movies from The Fast and the Furious collection": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "9485"
+      ],
+      "company_ids": []
+    },
+    "Give me a review of a movie from the collection The Fast and the Furious.": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "9485"
+      ],
+      "company_ids": []
+    },
+    "When was the first movie of the collection Lord of the Rings released?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [
+        "1173608"
+      ],
+      "company_ids": []
+    },
+    "tell me the directors of the first season of House of Cards": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "I want some tv shows that similar to House of Cards": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "tell me a few more works directed by the director of Django Unchained": {
+      "movie_ids": [
+        "68718",
+        "854521",
+        "1062853"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "I need a review for Breaking Bad": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "I'm watching the tv series The Last Of Us and I need some more recommendations": {
+      "movie_ids": [],
+      "tv_ids": [
+        "100088",
+        "62141",
+        "67834"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "I'm watching a TV show called The Last Of Us and I need some more recommendations": {
+      "movie_ids": [],
+      "tv_ids": [
+        "100088",
+        "62141",
+        "67834"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "tell me the guest star from season 3, episode 24 of Friends": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me a poster of 2 Broke Girls": {
+      "movie_ids": [],
+      "tv_ids": [
+        "39340",
+        "87955",
+        "313117"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "How many episodes does 2 Broke Girls have in total?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "39340",
+        "87955",
+        "313117"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When was the company that produced The Big Bang Theory founded?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1418",
+        "322995"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When was the TV show The Big Bang Theory created?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1418",
+        "322995"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What did the third episode of the second season of Westworld talk about?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "63247",
+        "411"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Tell me the air date of the second season of Game of Thrones": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    " give me a poster of the third episode of Band of Brothers": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the logo of the network that produced Game of Thrones?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me the homepage of the network that produced Game of Thrones": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the genre of The Mandalorian?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who has worked with Jeremy Clarkson in his most popular TV show?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What does the lead actor of the first episode of second season of Black Mirror look like?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "42009",
+        "79100"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When is the lead actor of The Mandalorian born?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me some reviews of Cate Blanchett's latest TV show": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is David Schwimmer's most popular TV show?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who directed the third episode of the second season of Black Mirror?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "42009",
+        "79100"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me some movies that Christopher Nolan known for": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Avatar versus Avatar: The Way of Water, which has a higher rating": {
+      "movie_ids": [
+        "76600"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the genre of the movie Lord of the Ring?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "give me a poster of the second season of Big Bang Theory": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1418",
+        "322995"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What is the name of the third episode of the second season of Mandalorian?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When is the birthday of the lead actor of the movie The Shawshank Redemptionn?": {
+      "movie_ids": [
+        "278",
+        "897459",
+        "1490289"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "When is the birthday of the director of the movie The Shawshank Redemption?": {
+      "movie_ids": [
+        "278",
+        "897459",
+        "1490289"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Where is the headquarter of the company that created the movie The Shawshank Redemption?": {
+      "movie_ids": [
+        "278",
+        "897459",
+        "1490289"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Where is the headquarter of the company that created the collection Star Wars?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who has an earlier release date, The Double Life of Veronique or Mulholland Drive?": {
+      "movie_ids": [
+        "1600"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Is the director of Twin Peaks Season 1 and Mulholland Drive the same person?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "1920"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Where was the director of Mulholland Drive born?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Is Mulholland Drive in the Top-10 rated list of the TMDB?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who directed more movies, Akira Kurosawa or Spielberg?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "What TV series has the director of Mulholland Drive directed?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Tell me about actor Scarlett Johansson's birthday": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "How many seasons of Sword Art Online are there?": {
+      "movie_ids": [],
+      "tv_ids": [
+        "45782",
+        "78204"
+      ],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Are Yui Aragaki and Gen Hoshino co-starring in We Married as Job?": {
+      "movie_ids": [
+        "960478"
+      ],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Who is older, by how many years, the director of film Barbie or the lead actor of television DEATH NOTE?": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Tell me about Katherine LaNasa's latest movie appearance.": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [
+        "169337"
+      ],
+      "collection_ids": [],
+      "company_ids": []
+    },
+    "Give me one cover image of the movie Oppenheimer.": {
+      "movie_ids": [],
+      "tv_ids": [],
+      "person_ids": [],
+      "collection_ids": [],
+      "company_ids": []
+    }
+  },
+  "n_named": 55,
+  "n_queries_frozen": 75
+}

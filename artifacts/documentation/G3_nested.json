@@ -1,0 +1,879 @@
+{
+  "n": 100,
+  "counts": {
+    "nested": 40,
+    "independent": 39,
+    "underspecified": 21
+  },
+  "nested_indices": [
+    6,
+    9,
+    11,
+    12,
+    13,
+    21,
+    24,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    48,
+    49,
+    53,
+    54,
+    55,
+    56,
+    57,
+    60,
+    63,
+    64,
+    65,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    93,
+    95,
+    96,
+    97,
+    98,
+    99
+  ],
+  "underspecified_indices": [
+    5,
+    7,
+    8,
+    10,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    59,
+    62,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+  ],
+  "independent_n": 39,
+  "nested_edges": [
+    {
+      "index": 6,
+      "query_id": 1984,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "URL Link Shortener",
+          "from_api": "Get a list of domains",
+          "to_tool": "bitly",
+          "to_api": "shorten",
+          "param": "longUrl"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 9,
+      "query_id": 1989,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "URL Link Shortener",
+          "from_api": "Get a list of domains",
+          "to_tool": "bitly",
+          "to_api": "shorten",
+          "param": "longUrl"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 11,
+      "query_id": 3322,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Genres",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 12,
+      "query_id": 3323,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Genres",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 13,
+      "query_id": 4279,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 21,
+      "query_id": 5865,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search By Title (FREE)",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 24,
+      "query_id": 8034,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "OTT details",
+          "from_api": "Title Details",
+          "to_tool": "Watchmode",
+          "to_api": "Title Cast & Crew",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "query_id": 9332,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 29,
+      "query_id": 9335,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 30,
+      "query_id": 9336,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 31,
+      "query_id": 9337,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 32,
+      "query_id": 9339,
+      "n_gold": 2,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 33,
+      "query_id": 9340,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "SearchVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 48,
+      "query_id": 12094,
+      "n_gold": 4,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetAllCategories",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 49,
+      "query_id": 12095,
+      "n_gold": 4,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetAllCategories",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 53,
+      "query_id": 13773,
+      "n_gold": 4,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "OTT details",
+          "from_api": "Basic Info",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "query_id": 13774,
+      "n_gold": 5,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "List Titles",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        },
+        {
+          "from_tool": "OTT details",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 55,
+      "query_id": 13776,
+      "n_gold": 5,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Streaming Release Dates",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        },
+        {
+          "from_tool": "OTT details",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 56,
+      "query_id": 13777,
+      "n_gold": 5,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "List Titles",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        },
+        {
+          "from_tool": "OTT details",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 57,
+      "query_id": 13779,
+      "n_gold": 5,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "List Titles",
+          "to_tool": "Watchmode",
+          "to_api": "Title Streaming Sources",
+          "param": "id"
+        },
+        {
+          "from_tool": "OTT details",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 60,
+      "query_id": 14489,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "URL Link Shortener",
+          "from_api": "Get a list of domains",
+          "to_tool": "bitly",
+          "to_api": "shorten",
+          "param": "longUrl"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 63,
+      "query_id": 14947,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetRelatedPeople",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Vimeo",
+          "to_api": "GetChannelVideos",
+          "param": "channel_id"
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "query_id": 14948,
+      "n_gold": 4,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetAllChannels",
+          "to_tool": "Vimeo",
+          "to_api": "GetChannelVideos",
+          "param": "channel_id"
+        },
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetRelatedPeople",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 65,
+      "query_id": 14950,
+      "n_gold": 4,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetAllChannels",
+          "to_tool": "Vimeo",
+          "to_api": "GetChannelVideos",
+          "param": "channel_id"
+        },
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetRelatedPeople",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 67,
+      "query_id": 18978,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Pro",
+          "to_tool": "Watchmode",
+          "to_api": "Title Cast & Crew",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "query_id": 18979,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Pro",
+          "to_tool": "Watchmode",
+          "to_api": "Title Cast & Crew",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "query_id": 18980,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Pro",
+          "to_tool": "Watchmode",
+          "to_api": "Title Cast & Crew",
+          "param": "id"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "query_id": 18982,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Pro",
+          "to_tool": "OTT details",
+          "to_api": "Basic Info",
+          "param": "peopleid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Person",
+          "param": "id"
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "query_id": 18984,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 72,
+      "query_id": 18987,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 73,
+      "query_id": 18988,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 74,
+      "query_id": 18990,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 75,
+      "query_id": 18992,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 76,
+      "query_id": 18993,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Streaming Availability",
+          "from_api": "Search Ultra",
+          "to_tool": "Watchmode",
+          "to_api": "Title Details",
+          "param": "id"
+        },
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Title Details",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 93,
+      "query_id": 23239,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetCategoryInfo",
+          "to_tool": "Vimeo",
+          "to_api": "GetChannelVideos",
+          "param": "channel_id"
+        },
+        {
+          "from_tool": "Vimeo",
+          "from_api": "GetChannelVideos",
+          "to_tool": "YTStream - Download YouTube Videos",
+          "to_api": "Download/Stream",
+          "param": "id"
+        }
+      ],
+      "underspecified": []
+    },
+    {
+      "index": 95,
+      "query_id": 25160,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Search",
+          "param": "search_field"
+        }
+      ]
+    },
+    {
+      "index": 96,
+      "query_id": 25161,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Search",
+          "param": "search_field"
+        }
+      ]
+    },
+    {
+      "index": 97,
+      "query_id": 25163,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Search",
+          "param": "search_field"
+        }
+      ]
+    },
+    {
+      "index": 98,
+      "query_id": 25164,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Search",
+          "param": "search_field"
+        }
+      ]
+    },
+    {
+      "index": 99,
+      "query_id": 25165,
+      "n_gold": 3,
+      "label": "nested",
+      "edges": [
+        {
+          "from_tool": "Watchmode",
+          "from_api": "Search",
+          "to_tool": "OTT details",
+          "to_api": "Title Details",
+          "param": "imdbid"
+        }
+      ],
+      "underspecified": [
+        {
+          "to_tool": "Watchmode",
+          "to_api": "Search",
+          "param": "search_field"
+        }
+      ]
+    }
+  ]
+}

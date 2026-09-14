@@ -1,0 +1,358 @@
+{
+  "frozen_at": "2026-09-09T15:15:26.132295+00:00",
+  "git_commit": "2827dc3c064183de3c8fa0bab00aeafc9dcf26b5",
+  "dataset": "RestBench-TMDB",
+  "stage": "screen_a",
+  "purpose": "candidate selection between P and PF",
+  "seeds": [
+    21,
+    22
+  ],
+  "previously_used_indices": [
+    0,
+    5,
+    13,
+    17,
+    20,
+    33,
+    51,
+    57,
+    62,
+    66,
+    1,
+    4,
+    6,
+    7,
+    22,
+    25,
+    26,
+    31,
+    36,
+    39,
+    42,
+    43,
+    45,
+    53,
+    60,
+    63,
+    65,
+    68,
+    71,
+    73,
+    74,
+    81,
+    94,
+    98
+  ],
+  "query_file_digest": "1a9b89355d2abbab0be5e3ee2db1344925de6b43d743634621b9da399fabcf11",
+  "initial_docs_file_digest": "af196035e3f68940026807ed2337231054733d538a7ba9406931df89cbb18f0d",
+  "initial_docs_payload_digest": "7203d53e2755b6d63c0d616c0aac0826d806862aede6a6dce856a70804cfee90",
+  "selection": {
+    "selection_version": "structural-heldout-v1",
+    "salt": "positive-scope-split-2026-09-09",
+    "requested_size": 24,
+    "eligible_count": 54,
+    "excluded_indices": [
+      0,
+      1,
+      4,
+      5,
+      6,
+      7,
+      13,
+      17,
+      20,
+      22,
+      25,
+      26,
+      31,
+      33,
+      36,
+      39,
+      42,
+      43,
+      45,
+      51,
+      53,
+      57,
+      60,
+      62,
+      63,
+      65,
+      66,
+      68,
+      71,
+      73,
+      74,
+      81,
+      94,
+      98
+    ],
+    "indices": [
+      2,
+      3,
+      9,
+      14,
+      15,
+      27,
+      28,
+      29,
+      34,
+      37,
+      38,
+      44,
+      50,
+      52,
+      55,
+      59,
+      64,
+      69,
+      70,
+      75,
+      84,
+      86,
+      88,
+      92
+    ],
+    "rows": [
+      {
+        "query_index": 2,
+        "gold": [
+          "GET_movie_top_rated",
+          "GET_movie_movie_id_credits"
+        ],
+        "stratum": "2hop:listing:movie"
+      },
+      {
+        "query_index": 3,
+        "gold": [
+          "GET_search_collection",
+          "GET_collection_collection_id_images"
+        ],
+        "stratum": "2hop:search:collection"
+      },
+      {
+        "query_index": 9,
+        "gold": [
+          "GET_search_person",
+          "GET_person_person_id_movie_credits"
+        ],
+        "stratum": "2hop:search:person"
+      },
+      {
+        "query_index": 14,
+        "gold": [
+          "GET_search_movie",
+          "GET_movie_movie_id_credits"
+        ],
+        "stratum": "2hop:search:movie"
+      },
+      {
+        "query_index": 15,
+        "gold": [
+          "GET_search_tv",
+          "GET_tv_tv_id_season_season_number_episode_episode_number_images"
+        ],
+        "stratum": "2hop:search:tv"
+      },
+      {
+        "query_index": 27,
+        "gold": [
+          "GET_movie_popular",
+          "GET_movie_movie_id_keywords"
+        ],
+        "stratum": "2hop:listing:movie"
+      },
+      {
+        "query_index": 28,
+        "gold": [
+          "GET_movie_popular",
+          "GET_movie_movie_id_keywords"
+        ],
+        "stratum": "2hop:listing:movie"
+      },
+      {
+        "query_index": 29,
+        "gold": [
+          "GET_search_movie",
+          "GET_movie_movie_id_credits"
+        ],
+        "stratum": "2hop:search:movie"
+      },
+      {
+        "query_index": 34,
+        "gold": [
+          "GET_search_collection",
+          "GET_collection_collection_id",
+          "GET_movie_movie_id_images"
+        ],
+        "stratum": "3hop:search:movie"
+      },
+      {
+        "query_index": 37,
+        "gold": [
+          "GET_search_collection",
+          "GET_collection_collection_id"
+        ],
+        "stratum": "2hop:search:collection"
+      },
+      {
+        "query_index": 38,
+        "gold": [
+          "GET_search_collection",
+          "GET_collection_collection_id",
+          "GET_movie_movie_id_reviews"
+        ],
+        "stratum": "3hop:search:movie"
+      },
+      {
+        "query_index": 44,
+        "gold": [
+          "GET_tv_on_the_air",
+          "GET_tv_tv_id_credits"
+        ],
+        "stratum": "2hop:listing:tv"
+      },
+      {
+        "query_index": 50,
+        "gold": [
+          "GET_tv_top_rated",
+          "GET_tv_tv_id_keywords"
+        ],
+        "stratum": "2hop:listing:tv"
+      },
+      {
+        "query_index": 52,
+        "gold": [
+          "GET_search_tv",
+          "GET_tv_tv_id"
+        ],
+        "stratum": "2hop:search:tv"
+      },
+      {
+        "query_index": 55,
+        "gold": [
+          "GET_tv_popular",
+          "GET_tv_tv_id_keywords"
+        ],
+        "stratum": "2hop:listing:tv"
+      },
+      {
+        "query_index": 59,
+        "gold": [
+          "GET_search_tv",
+          "GET_tv_tv_id",
+          "GET_network_network_id_images"
+        ],
+        "stratum": "3hop:search:network"
+      },
+      {
+        "query_index": 64,
+        "gold": [
+          "GET_trending_media_type_time_window",
+          "GET_tv_tv_id_credits",
+          "GET_person_person_id"
+        ],
+        "stratum": "3hop:listing:person"
+      },
+      {
+        "query_index": 69,
+        "gold": [
+          "GET_search_person",
+          "GET_person_person_id_tv_credits",
+          "GET_tv_tv_id_credits"
+        ],
+        "stratum": "3hop:search:tv"
+      },
+      {
+        "query_index": 70,
+        "gold": [
+          "GET_search_tv",
+          "GET_tv_tv_id_credits",
+          "GET_person_person_id_images"
+        ],
+        "stratum": "3hop:search:person"
+      },
+      {
+        "query_index": 75,
+        "gold": [
+          "GET_search_person",
+          "GET_person_person_id_tv_credits"
+        ],
+        "stratum": "2hop:search:person"
+      },
+      {
+        "query_index": 84,
+        "gold": [
+          "GET_search_movie",
+          "GET_movie_movie_id_credits",
+          "GET_person_person_id"
+        ],
+        "stratum": "3hop:search:person"
+      },
+      {
+        "query_index": 86,
+        "gold": [
+          "GET_search_movie",
+          "GET_movie_movie_id",
+          "GET_company_company_id"
+        ],
+        "stratum": "3hop:search:company"
+      },
+      {
+        "query_index": 88,
+        "gold": [
+          "GET_search_movie",
+          "GET_movie_movie_id"
+        ],
+        "stratum": "2hop:search:movie"
+      },
+      {
+        "query_index": 92,
+        "gold": [
+          "GET_search_person",
+          "GET_person_person_id_movie_credits"
+        ],
+        "stratum": "2hop:search:person"
+      }
+    ],
+    "strata_selected": {
+      "2hop:listing:movie": 3,
+      "2hop:listing:tv": 3,
+      "2hop:search:collection": 2,
+      "2hop:search:movie": 3,
+      "2hop:search:person": 3,
+      "2hop:search:tv": 2,
+      "3hop:listing:person": 1,
+      "3hop:search:company": 1,
+      "3hop:search:movie": 2,
+      "3hop:search:network": 1,
+      "3hop:search:person": 2,
+      "3hop:search:tv": 1
+    },
+    "strata_eligible": {
+      "2hop:listing:movie": 3,
+      "2hop:listing:tv": 7,
+      "2hop:search:collection": 2,
+      "2hop:search:movie": 8,
+      "2hop:search:person": 5,
+      "2hop:search:tv": 15,
+      "3hop:listing:person": 1,
+      "3hop:search:company": 1,
+      "3hop:search:movie": 6,
+      "3hop:search:network": 1,
+      "3hop:search:person": 4,
+      "3hop:search:tv": 1
+    },
+    "rejected": {
+      "discovery_panel": 34,
+      "first_call_needs_reference": 1,
+      "later_call_has_no_dataflow_input": 1,
+      "not_2_or_3_hop": 7,
+      "repeated_api": 1,
+      "unavailable_reference": 2
+    },
+    "source_policy": "query gold paths, candidate membership, and Initial API schemas only; no traces, scores, reports, or model outputs"
+  },
+  "selection_digest": "b5adc4d7c61e4515f19826e807e6892cc7a2938fb6e639a7b37eb69f93a9116f"
+}

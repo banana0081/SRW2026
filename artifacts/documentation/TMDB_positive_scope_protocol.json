@@ -1,0 +1,131 @@
+{
+  "frozen_at": "2026-09-09T15:18:08.382295+00:00",
+  "git_commit": "2827dc3c064183de3c8fa0bab00aeafc9dcf26b5",
+  "experiment": "cross-model positive scope",
+  "dataset": "RestBench-TMDB",
+  "models": {
+    "ling": "inclusionai/ling-3.0-flash",
+    "flash": "deepseek/deepseek-v4-flash-0731"
+  },
+  "providers": {
+    "ling": "novita",
+    "flash": "wafer"
+  },
+  "provider_policy": "pinned with fallbacks disabled and chosen by transport-only qualification; a completion served by another provider fails the cell",
+  "excluded_providers": {
+    "sailresearch": "29.1% of its completions finished on the token limit"
+  },
+  "provider_qualification": {
+    "ling": "artifacts/results/provider_qualification/ling_qualification.json",
+    "flash": "artifacts/results/provider_qualification/flash_qualification.json"
+  },
+  "decoding": {
+    "temperature": 0.2,
+    "top_p": 1,
+    "max_tokens": 2000
+  },
+  "retrieval_num": 5,
+  "workers": 15,
+  "error_policy": {
+    "transport": "network, 429 and 5xx retry identically up to three rounds; a query whose transport never recovers is dropped from every arm of that seed, because a block missing one arm cannot be paired",
+    "provider_drift": "a completion served by a provider other than the pinned one fails the cell and is treated like a transport fault",
+    "model_result": "a malformed or truncated completion, and any released-driver failure, counts as a miss and is never re-rolled"
+  },
+  "queries_digest": "1a9b89355d2abbab0be5e3ee2db1344925de6b43d743634621b9da399fabcf11",
+  "stages": {
+    "screen_a": {
+      "panel": {
+        "path": "artifacts\\documentation\\TMDB_screen_a_panel.json",
+        "selection_digest": "b5adc4d7c61e4515f19826e807e6892cc7a2938fb6e639a7b37eb69f93a9116f",
+        "n": 24
+      },
+      "seeds": [
+        21,
+        22
+      ],
+      "arms": [
+        "Initial",
+        "DRAFT",
+        "CurrentNot",
+        "P",
+        "PF"
+      ],
+      "arm_payload_digests": {
+        "Initial": "8762a9ed0b61179388e931cf5e352b33e028087a2b15ec4cc23f647e93694b4c",
+        "DRAFT": "c224ca746b9ae40218190d1ce924d0fc16375f9c00a8d1638cde7ac64778ac66",
+        "CurrentNot": "e1ea9e00d04fef22c2ed14eb7f488a6c81fd3d9a76311c9bfa93aae0a319a52e",
+        "P": "cff6500108cc31527215f33ee45f5e9d2794228fb9becd4965dca6bd84d6016f",
+        "PF": "4c156438e462060bee2ddd48bfcbdc8546a629dd96fba54b9086aa6ccd7b2797"
+      },
+      "baselines": [
+        "DRAFT",
+        "Initial"
+      ],
+      "incumbent": "CurrentNot",
+      "primary_candidates": [
+        "P",
+        "PF"
+      ],
+      "design": "randomized complete blocks over the arms",
+      "score": "the minimum paired effect over the four contrasts (2 models x DRAFT/Initial)",
+      "gate": {
+        "min_screen_score_pp": 2.0,
+        "max_replicate_loss_pp": -2.0,
+        "net_vs_incumbent": ">= 0 on both models",
+        "missing_final_consumer": "<= the incumbent's, on both models",
+        "promote": "at most one candidate",
+        "tie_break": [
+          "higher minimum contrast",
+          "higher summed effect",
+          "fewer rewritten surfaces"
+        ]
+      }
+    },
+    "promotion_b": {
+      "panel": {
+        "path": "artifacts\\documentation\\TMDB_promotion_b_panel.json",
+        "selection_digest": "a3b57d60001c28039b8caf31b991ed1510b6901dd7f988b02ce27440e32cedcf",
+        "n": 30
+      },
+      "seeds": [
+        23,
+        24,
+        25
+      ],
+      "arms": [
+        "Initial",
+        "DRAFT",
+        "screen_a_winner"
+      ],
+      "candidate_payload_digests": {
+        "P": "cff6500108cc31527215f33ee45f5e9d2794228fb9becd4965dca6bd84d6016f",
+        "PF": "4c156438e462060bee2ddd48bfcbdc8546a629dd96fba54b9086aa6ccd7b2797"
+      },
+      "analysis": "average the replicates inside a query, then a query-level label-swap permutation test",
+      "gate": {
+        "min_effect_pp": 3.0,
+        "min_positive_replicates": 2,
+        "max_one_sided_p": 0.05,
+        "contrasts_required": 4
+      }
+    },
+    "final_validation": {
+      "queries": 100,
+      "seeds": 10,
+      "rows": [
+        "DFSDT",
+        "DRAFT",
+        "Ours"
+      ],
+      "candidate_payload_digests": {
+        "P": "cff6500108cc31527215f33ee45f5e9d2794228fb9becd4965dca6bd84d6016f",
+        "PF": "4c156438e462060bee2ddd48bfcbdc8546a629dd96fba54b9086aa6ccd7b2797"
+      },
+      "primary_metric": "correct path (CP)",
+      "secondary_metric": "execution-valid CP: the gold path was executed with no call rejected because a parameter was filled wrongly",
+      "gate": "the lower bound of the paired Student-t 95% interval is above zero for all four contrasts"
+    }
+  },
+  "stopping_rule": "Screen A promotes at most one candidate. If none clears it, stop tuning on TMDB, report the model crossover as a negative result and move to Spotify/G3 with the frozen Ours. Promotion B runs only for the promoted candidate, and the full ten-seed TMDB run only if Promotion B confirms.",
+  "selection_digest": "33b5393895b1228b2294abf760365329a81c868b4d074442738d79c60328f74a"
+}

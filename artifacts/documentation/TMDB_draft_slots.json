@@ -1,0 +1,24 @@
+{
+  "n": 54,
+  "u_t_equals_d_t": 54,
+  "hop_apis": 33,
+  "hops_with_example": 33,
+  "examples_with_fake_ids": 7,
+  "adapter": "wrap_document copies description into tool_description when absent",
+  "samples": [
+    {
+      "tool": "GET_movie_movie_id_reviews",
+      "has_own_tool_description": false,
+      "u_t_equals_d_t": true,
+      "u_t_head": "This API retrieves user reviews for a specific movie using the movie ID included in the URL path as a required parameter. If the movie ID does not exist or is i",
+      "initial_description": "Get the user reviews for a movie.",
+      "example": {
+        "User Query": "Could you check if there are any reviews available for the movie with ID 11111 on page 10?",
+        "url": "http://api.themoviedb.org/3/movie/11111/reviews",
+        "Parameters": {
+          "page": 10
+        }
+      }
+    }
+  ]
+}

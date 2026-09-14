@@ -9,12 +9,19 @@
   "schema_changed": false,
   "prose_rewritten": false,
   "hop_style": "fill",
-  "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs",
+  "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs_no_not",
   "gold_used": false,
   "probe": {
     "ok": 0,
     "fail": 0,
     "calls": 0
   },
-  "seed_ids": {}
+  "seed_ids": {},
+  "documentation": {
+    "path": "artifacts\\documentation\\Spotify_Ours.json",
+    "bytes": 61698,
+    "file_digest": "e69c66723f4e3848f87930467f6206a862305717eeea72acc40c004d99b527d3",
+    "payload_digest": "b297977f0952bb14a8ab8b2286ef7caf40f65a7b4021e64714e3918355724acb"
+  },
+  "reproduced_by": "scripts/freeze_baselines.py"
 }

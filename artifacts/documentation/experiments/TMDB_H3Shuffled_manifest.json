@@ -1,0 +1,89 @@
+{
+  "variant": "H3Shuffled",
+  "dataset": "TMDB",
+  "created_at": "2026-09-09T02:39:18.805279+00:00",
+  "git_commit": "2827dc3c064183de3c8fa0bab00aeafc9dcf26b5",
+  "flags": {
+    "base": "Initial",
+    "fingerprint_in_tool_description": false,
+    "ports_in_description": true,
+    "witness_in_example": false,
+    "fill_line_in_description": false,
+    "shuffled_port_control": true,
+    "copied_frozen_documentation": null
+  },
+  "base_documentation": {
+    "name": "Initial",
+    "path": "external\\DRAFT\\dataset\\RestBench\\tool_instruction\\TMDB_Initial.json",
+    "file_digest": "af196035e3f68940026807ed2337231054733d538a7ba9406931df89cbb18f0d",
+    "payload_digest": "7203d53e2755b6d63c0d616c0aac0826d806862aede6a6dce856a70804cfee90"
+  },
+  "payload_digest": "19d83a4badc84cee3f719c1cbc70177a0cff1be24f004751154a0031372b9e02",
+  "n": 54,
+  "provenance": {
+    "inputs": [
+      "tool_instruction JSON",
+      "endpoint URLs",
+      "generic live probes"
+    ],
+    "benchmark_readers_absent": [
+      "load_queries",
+      "gold_apis",
+      "correct_path",
+      "test_path",
+      "load_traces"
+    ],
+    "compiler_digest": "b2b60c09b68fec8a7398201333e0a5f350d558fa2e524472edba0c5d097af143",
+    "ours_compiler_digest": "20323276dd06b6848d4a02283800f2b9a5a7816c3913e73606a21ae6e3197546"
+  },
+  "probe": {
+    "probed": true,
+    "seed_ids": {
+      "movie_id": "27205",
+      "tv_id": "1399",
+      "person_id": "31",
+      "company_id": "99981",
+      "collection_id": "10",
+      "season_number": "1",
+      "episode_number": "1"
+    },
+    "seed_probe": {
+      "ok": 9,
+      "fail": 0,
+      "calls": 9
+    },
+    "harvested_ports": [
+      "collection_ref:int",
+      "company_ref:int",
+      "credit_ref:str",
+      "episode_number:int",
+      "genre_id:int",
+      "keyword_ref:int",
+      "movie_ref:int",
+      "movie_ref|tv_ref:int",
+      "movie_ref|tv_ref|person_ref:int",
+      "network_ref:int",
+      "person_ref:int",
+      "review_ref:str",
+      "season_number:int",
+      "tv_ref:int"
+    ],
+    "paths": {
+      "verified": 56,
+      "nullable": 1,
+      "absent": 0,
+      "inconclusive": 7,
+      "unprobed": 0,
+      "endpoints_called": 54
+    },
+    "endpoints_unreached": [],
+    "dropped_absent_ports": {}
+  },
+  "gold_used": false,
+  "schema_changed": {},
+  "surfaces_touched": {
+    "tool_description": 0,
+    "description": 54,
+    "example": 0
+  }
+}

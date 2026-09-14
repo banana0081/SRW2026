@@ -407,6 +407,63 @@ def catalog_scope_line(contract: str) -> str:
     return compact
 
 
+POSITIVE_SCOPE_LIMIT = 160
+
+
+def positive_scope_line(contract: str, *, limit: int = POSITIVE_SCOPE_LIMIT) -> str:
+    """The `Returns ...` half of the response contract, with no sibling list.
+
+    `catalog_scope_line` renders `Downstream:` as `not GET_...`. On Flash that
+    reads as a prohibition on the very endpoint the next hop needs: on q001 the
+    search API's own description said `not GET_movie_movie_id_credits` while
+    the task asked for credits, and the model returned an invalid choice and
+    skipped the hop. Keeping only the positive half states the same scope fact
+    without naming a sibling at all.
+    """
+    response = contract.split("Downstream:", 1)[0].strip()
+    if not response.startswith("Response: "):
+        return ""
+    compact = response.replace("Response: ", "Returns ", 1)
+    if len(compact) > limit:
+        compact = compact[: limit - 3].rstrip(",; ") + "..."
+    return compact
+
+
+NEGATION_RE = re.compile(r"\bnot (?:GET|PUT|POST|DELETE)_")
+
+
+def choose_tool_label(docs: dict[str, dict[str, Any]]) -> str:
+    """Describe what choose_tool actually sees, read off the built docs.
+
+    The label used to be a hand-written constant, so TMDB_Ours_report.json
+    claimed `no_not` while the frozen JSON still carried `not GET_`. Deriving
+    it from the text means the report cannot disagree with the digest.
+    """
+    scoped = 0
+    negated = 0
+    for document in docs.values():
+        purpose = str(document.get("tool_description") or "")
+        base_purpose = str(document.get("description") or "").split("\n\n")[0].rstrip()
+        if purpose.rstrip() != base_purpose:
+            scoped += 1
+        if NEGATION_RE.search(purpose):
+            negated += 1
+    if not scoped:
+        return "base_purpose_everywhere"
+    suffix = "with_not" if negated else "no_not"
+    return f"base_purpose_on_hops_scope_on_catalogs_{suffix}"
+
+
+def assert_label_matches(docs: dict[str, dict[str, Any]], label: str) -> None:
+    """Refuse to ship a documentation whose label misreads its own text."""
+    actual = choose_tool_label(docs)
+    if actual != label:
+        raise ValueError(
+            f"documentation label {label!r} does not match its content "
+            f"({actual!r}); the report would misattribute the digest."
+        )
+
+
 def build_ours_instructions(
     base: dict[str, dict[str, Any]],
     *,
@@ -460,7 +517,7 @@ def build_ours_instructions(
         "schema_changed": False,
         "prose_rewritten": False,
         "hop_style": "fill",
-        "choose_tool_text": "base_purpose_on_hops_scope_on_catalogs",
+        "choose_tool_text": choose_tool_label(ours),
         "gold_used": False,
         "probe": probe,
         "seed_ids": ids,

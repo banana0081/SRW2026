@@ -51,7 +51,12 @@ from tooldoc_nir.documentation_store import (
     parse_extra_documentation,
     resolve_documentation_path,
 )
-from tooldoc_nir.openrouter import OpenRouterClient, OpenRouterError, load_env_file
+from tooldoc_nir.openrouter import (
+    OpenRouterClient,
+    OpenRouterError,
+    load_env_file,
+    normalize_provider,
+)
 from tooldoc_nir.provenance import (
     ManifestMismatch,
     build_manifest as build_run_manifest,
@@ -89,6 +94,7 @@ SIMULATOR_SYSTEM_PROMPT = (
 
 COST_CAP = "cost_cap"
 TRANSPORT = "transport"
+PROVIDER_DRIFT = "provider_drift"
 CACHE_MISS = "cache_miss"
 SCHEMA_GATE = "schema_gate"
 LIVE = "live"
@@ -149,6 +155,15 @@ class CostCapReached(HarnessFailure):
 
 class SimulatorCacheMiss(HarnessFailure):
     """A replay run needed a response that is not in the frozen cache."""
+
+
+class ProviderDrift(HarnessFailure):
+    """A pinned provider was not the one that served the completion.
+
+    Two runs served by different providers of the same model id are not the
+    same measurement, so this stops the cell instead of letting the arm carry
+    a mixed endpoint.
+    """
 
 
 class ReleasedDriverFailure(RuntimeError):
@@ -366,6 +381,7 @@ class LoggedOpenRouter:
         self.budget.record(cost_usd)
         self.request_count += 1
         transport = result.get("_transport") or {}
+        served_provider = str(result.get("provider") or "")
         _append_jsonl(
             self.usage_path,
             {
@@ -374,12 +390,21 @@ class LoggedOpenRouter:
                 "stage": stage,
                 "requested_model": self.model,
                 "served_model": result.get("model", ""),
-                "provider": result.get("provider", ""),
+                "pinned_provider": self.provider or "",
+                "provider": served_provider,
                 "request_id": transport.get("request_id", ""),
                 "seed": seed,
                 "temperature": temperature,
                 "top_p": top_p,
                 "max_tokens": max_tokens,
+                # The prompt is what the documentation variant actually became
+                # by the time the model saw it. Without this digest, two arms
+                # can only be compared on their source JSON, not on the text
+                # the released driver assembled from it.
+                "prompt_digest": payload_digest(messages),
+                "prompt_chars": sum(
+                    len(str(message.get("content") or "")) for message in messages
+                ),
                 "prompt_tokens": usage.get("prompt_tokens", 0),
                 "completion_tokens": usage.get("completion_tokens", 0),
                 "reasoning_tokens": (
@@ -390,6 +415,15 @@ class LoggedOpenRouter:
                 "finish_reason": choice.get("finish_reason", ""),
             },
         )
+        if self.provider and normalize_provider(served_provider) != normalize_provider(
+            self.provider
+        ):
+            message = (
+                f"{self.role} pinned {self.provider} but {stage} was served by "
+                f"{served_provider or 'an unnamed provider'}"
+            )
+            self.failures.record(PROVIDER_DRIFT, message)
+            raise ProviderDrift(message)
         return content
 
 
@@ -416,6 +450,15 @@ def usage_totals(path: Path) -> dict[str, Any]:
         ),
         "providers": sorted(
             {str(row.get("provider") or "") for row in records} - {""}
+        ),
+        "pinned_providers": sorted(
+            {str(row.get("pinned_provider") or "") for row in records} - {""}
+        ),
+        "prompt_digests": len(
+            {str(row.get("prompt_digest") or "") for row in records} - {""}
+        ),
+        "length_truncated": sum(
+            1 for row in records if row.get("finish_reason") == "length"
         ),
     }
 
@@ -1693,6 +1736,12 @@ def main() -> int:
     )
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--limit", type=int, default=1)
+    parser.add_argument(
+        "--query-indices",
+        default=None,
+        help="Comma-separated G3 indices. Overrides --start/--limit. "
+        "Use the nested slice from artifacts/documentation/G3_nested.json.",
+    )
     parser.add_argument("--retrieval-num", type=int, default=5)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--max-cost-usd", type=float, default=1.0)
@@ -1760,7 +1809,11 @@ def main() -> int:
             agent_model=args.agent_model,
             simulator_model=args.simulator_model,
             agent_provider=args.agent_provider,
-            query_indices=list(range(args.start, args.start + args.limit)),
+            query_indices=(
+                [int(part) for part in args.query_indices.split(",") if part.strip()]
+                if args.query_indices
+                else list(range(args.start, args.start + args.limit))
+            ),
             retrieval_num=args.retrieval_num,
             seed=args.seed,
             budget=budget,
